@@ -2,6 +2,14 @@
 
 dart 一些工具处理类
 
+质量基线:
+
+```
+dart format .
+dart analyze
+dart test
+```
+
 # common_flutter
 
 一些 flutter 公共的 widget
