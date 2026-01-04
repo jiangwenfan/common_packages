@@ -1,0 +1,16 @@
+name: common_dart
+description: 这是一个dart通用的工具函数.
+version: 0.0.1
+homepage: https://github.com/jiangwenfan/common_dart
+# repository: https://github.com/my_org/my_repo
+
+environment:
+  sdk: ^3.3.4
+
+# Add regular dependencies here.
+dependencies:
+  # path: ^1.8.0
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0
