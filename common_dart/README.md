@@ -1,39 +1,40 @@
-<!-- 
+<!--
 This README describes the package. If you publish this package to pub.dev,
 this README's contents appear on the landing page for your package.
 
 For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages). 
+[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
 
 For general information about developing packages, see the Dart guide for
 [creating packages](https://dart.dev/guides/libraries/create-packages)
 and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages). 
+[developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+这是一个封装了我自己经常使用的工具包
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- azure 云服务接口的封装
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```
+dart pub add common_dart
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
-const like = 'sample';
+import 'package:common_dart/common_dart.dart';
+
+// Use the package functionality here
 ```
+
+Example usage can be found in the `/example` folder.
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+This package provides utility functions and classes for common Dart development tasks, with a focus on Azure cloud services integration.
+
+For more information, please visit the [GitHub repository](https://github.com/jiangwenfan/common_flutter).
