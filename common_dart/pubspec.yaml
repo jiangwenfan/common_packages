@@ -1,5 +1,5 @@
 name: common_dart
-description: A starting point for Dart libraries or applications.
+description: "公共 Dart 工具库"
 version: 1.0.0
 homepage: https://github.com/jiangwenfan/common_flutter
 repository: https://github.com/jiangwenfan/common_flutter
