@@ -11,21 +11,27 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+flutter 的自定义工具封装
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+封装 widget
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```
+dart pub add common_flutter
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
+```dart
+import 'package:common_flutter/common_flutter.dart';
+
+// Use the package functionality here
+```
+
+Include short and useful examples for package users. Add longer examples
 to `/example` folder.
 
 ```dart
@@ -34,6 +40,6 @@ const like = 'sample';
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
+tell users more about the package: where to find more information, how to
 contribute to the package, how to file issues, what response they can expect
 from the package authors, and more.

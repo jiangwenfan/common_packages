@@ -1,7 +1,9 @@
 name: common_flutter
-description: "A new Flutter package project."
-version: 0.0.1
-homepage:
+description: "flutter的自定义工具封装"
+version: 1.0.0
+homepage: https://github.com/jiangwenfan/common_flutter
+repository: https://github.com/jiangwenfan/common_flutter
+issue_tracker: https://github.com/jiangwenfan/common_flutter/issues
 
 environment:
   sdk: ^3.9.2
