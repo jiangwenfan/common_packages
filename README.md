@@ -10,6 +10,14 @@ dart analyze
 dart test
 ```
 
+发布
+
+```
+dart pub publish --dry-run
+
+dart pub publish
+```
+
 # common_flutter
 
 一些 flutter 公共的 widget
