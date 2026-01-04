@@ -38,8 +38,8 @@ void main() {
           ttsKey.isEmpty ||
           ttsRegion == null ||
           ttsRegion.isEmpty)
-          ? '需要翻译(AZURE_TRANSLATOR_KEY/REGION)与语音(AZURE_TTS_KEY/REGION)两套凭证才能运行微软翻译与 TTS 集成测试'
-          : null;
+      ? '需要翻译(AZURE_TRANSLATOR_KEY/REGION)与语音(AZURE_TTS_KEY/REGION)两套凭证才能运行微软翻译与 TTS 集成测试'
+      : null;
 
   TranslateMicrosoft createClient() => TranslateMicrosoft(
     textEndpoint: textEndpoint,

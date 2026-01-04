@@ -1,4 +1,5 @@
 import 'dart:typed_data';
+export 'src/azure_cloud/translate.dart';
 
 /// 后端支持的语言代码。
 enum LanguageCodeOfBackend {

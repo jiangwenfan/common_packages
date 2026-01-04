@@ -31,8 +31,8 @@ class TranslateMicrosoft {
     required this.ttsMicrosoft,
     Map<String, String>? partParams,
     Dio? dio,
-  })  : partParams = partParams ?? const {},
-        _dio = dio ?? Dio();
+  }) : partParams = partParams ?? const {},
+       _dio = dio ?? Dio();
 
   final String textEndpoint;
   final String wordEndpoint;
@@ -94,8 +94,8 @@ class TranslateMicrosoft {
     final normalizedWord = response['normalizedSource'] as String;
     final displayWord = response['displaySource'] as String;
 
-    final rawTranslations =
-        (response['translations'] as List).cast<Map<String, dynamic>>();
+    final rawTranslations = (response['translations'] as List)
+        .cast<Map<String, dynamic>>();
 
     final translations = <WordTranslation>[];
     final rawShapes = <Map<String, dynamic>>[];
@@ -109,15 +109,17 @@ class TranslateMicrosoft {
           frequency: _changeFrequency(
             (rawTranslation['confidence'] as num).toDouble(),
           ),
-          examples: (rawTranslation['examples'] as List?)
+          examples:
+              (rawTranslation['examples'] as List?)
                   ?.cast<Map<String, dynamic>>() ??
               const [],
         ),
       );
 
       final backTranslations =
-          (rawTranslation['backTranslations'] as List?)?.cast<Map<String, dynamic>>() ??
-              const [];
+          (rawTranslation['backTranslations'] as List?)
+              ?.cast<Map<String, dynamic>>() ??
+          const [];
       rawShapes.addAll(backTranslations);
     }
 
@@ -126,8 +128,8 @@ class TranslateMicrosoft {
     final audioData = audio is Uint8List
         ? audio
         : audio is List<int>
-            ? Uint8List.fromList(audio)
-            : Uint8List(0);
+        ? Uint8List.fromList(audio)
+        : Uint8List(0);
 
     return WordInfo(
       normalizedWord: normalizedWord,
@@ -147,8 +149,8 @@ class TranslateMicrosoft {
     final audioData = audio is Uint8List
         ? audio
         : audio is List<int>
-            ? Uint8List.fromList(audio)
-            : Uint8List(0);
+        ? Uint8List.fromList(audio)
+        : Uint8List(0);
 
     return SentenceInfo(
       sentence: sentence,
@@ -166,11 +168,7 @@ class TranslateMicrosoft {
     final source = _changeLanguageCode(sourceLanguageCode);
     final target = _changeLanguageCode(targetLanguageCode);
 
-    final params = {
-      ...partParams,
-      'from': source,
-      'to': target,
-    };
+    final params = {...partParams, 'from': source, 'to': target};
 
     final accessToken = await ttsMicrosoft.fetchAccessToken();
 
@@ -183,7 +181,7 @@ class TranslateMicrosoft {
     };
 
     final body = [
-      {'Text': word}
+      {'Text': word},
     ];
 
     late Response response;
@@ -229,11 +227,7 @@ class TranslateMicrosoft {
     final source = _changeLanguageCode(sourceLanguageCode);
     final target = _changeLanguageCode(targetLanguageCode);
 
-    final params = {
-      ...partParams,
-      'from': source,
-      'to': target,
-    };
+    final params = {...partParams, 'from': source, 'to': target};
 
     final accessToken = await ttsMicrosoft.fetchAccessToken();
 
@@ -246,7 +240,7 @@ class TranslateMicrosoft {
     };
 
     final body = [
-      {'Text': normalizedWord, 'Translation': normalizedTranslation}
+      {'Text': normalizedWord, 'Translation': normalizedTranslation},
     ];
 
     late Response response;
@@ -288,8 +282,8 @@ class TranslateMicrosoft {
       );
     }
 
-    final examples =
-        (sampleResponse['examples'] as List).cast<Map<String, dynamic>>();
+    final examples = (sampleResponse['examples'] as List)
+        .cast<Map<String, dynamic>>();
     return examples;
   }
 
@@ -335,12 +329,13 @@ class TranslateMicrosoft {
     LanguageCodeOfBackend targetLanguageCode,
   ) async {
     final normalizedWord = rawResponse['normalizedSource'] as String;
-    final translationsInfo =
-        (rawResponse['translations'] as List).cast<Map<String, dynamic>>();
+    final translationsInfo = (rawResponse['translations'] as List)
+        .cast<Map<String, dynamic>>();
     final finalTranslationsInfo = <Map<String, dynamic>>[];
 
     for (final translationInfo in translationsInfo) {
-      final normalizedTranslation = translationInfo['normalizedTarget'] as String;
+      final normalizedTranslation =
+          translationInfo['normalizedTarget'] as String;
       final rawSamples = await _sendWordExamplesRequest(
         normalizedWord,
         normalizedTranslation,
@@ -364,11 +359,7 @@ class TranslateMicrosoft {
     final source = _changeLanguageCode(sourceLanguageCode);
     final target = _changeLanguageCode(targetLanguageCode);
 
-    final params = {
-      ...partParams,
-      'from': source,
-      'to': target,
-    };
+    final params = {...partParams, 'from': source, 'to': target};
 
     final headers = {
       'Ocp-Apim-Subscription-Key': key,
@@ -378,7 +369,7 @@ class TranslateMicrosoft {
     };
 
     final body = [
-      {'text': text}
+      {'text': text},
     ];
 
     late Response response;
@@ -419,8 +410,8 @@ class TranslateMicrosoft {
       );
     }
 
-    final translations =
-        (responseDict['translations'] as List).cast<Map<String, dynamic>>();
+    final translations = (responseDict['translations'] as List)
+        .cast<Map<String, dynamic>>();
     if (translations.length != 1) {
       throw HttpException(
         'microsoft翻译响应格式错误3: $translations',
@@ -467,8 +458,9 @@ double _changeFrequency(double frequency) =>
 List<Map<String, dynamic>> _sortShapes(List<Map<String, dynamic>> rawShapes) {
   final shapes = List<Map<String, dynamic>>.from(rawShapes);
   shapes.sort(
-    (a, b) => ((b['frequencyCount'] as num?) ?? 0)
-        .compareTo((a['frequencyCount'] as num?) ?? 0),
+    (a, b) => ((b['frequencyCount'] as num?) ?? 0).compareTo(
+      (a['frequencyCount'] as num?) ?? 0,
+    ),
   );
   return shapes;
 }

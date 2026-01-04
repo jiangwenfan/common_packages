@@ -7,10 +7,7 @@ import 'package:dio/dio.dart';
 enum LanguageType { en, zh }
 
 class _AudioStyle {
-  const _AudioStyle({
-    required this.languageCode,
-    required this.name,
-  });
+  const _AudioStyle({required this.languageCode, required this.name});
 
   final String languageCode;
   final String name;
@@ -41,11 +38,11 @@ class TtsMicrosoft {
     this.gender = 'Male',
     Dio? dio,
     BaseOptions? dioOptions,
-  })  : accessTokenUrl =
-            'https://${locationRegion}.api.cognitive.microsoft.com/sts/v1.0/issueToken',
-        textToSpeechUrl =
-            'https://${locationRegion}.tts.speech.microsoft.com/cognitiveservices/v1',
-        _dio = dio ?? Dio(dioOptions) {
+  }) : accessTokenUrl =
+           'https://${locationRegion}.api.cognitive.microsoft.com/sts/v1.0/issueToken',
+       textToSpeechUrl =
+           'https://${locationRegion}.tts.speech.microsoft.com/cognitiveservices/v1',
+       _dio = dio ?? Dio(dioOptions) {
     final style = _audioStyles[language]!;
     languageCode = style.languageCode;
     voiceName = style.name;
@@ -87,13 +84,15 @@ class TtsMicrosoft {
   }
 
   /// 根据文本构建 SSML 负载。
-  String generateXmlData(String text) => '''
+  String generateXmlData(String text) =>
+      '''
 <speak version='1.0' xml:lang='$languageCode'>
   <voice xml:lang='$languageCode' xml:gender='$gender' name='$voiceName'>
     $text
   </voice>
 </speak>
-'''.trim();
+'''
+          .trim();
 
   /// 调用 Azure TTS 将文本转换为音频字节。
   Future<Uint8List> convertTextToSpeech(String text) async {

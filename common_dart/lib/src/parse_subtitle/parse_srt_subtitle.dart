@@ -52,8 +52,12 @@ class ParseSrtSubtitle extends ParseSubtitle {
         } else {
           // 如果遇到空行，说明上面解析完成了
           // 添加数据
-          SubtitleResItem item =
-              SubtitleResItem(index, startTime, endTime, resContent);
+          SubtitleResItem item = SubtitleResItem(
+            index,
+            startTime,
+            endTime,
+            resContent,
+          );
           items.add(item);
           // 清空item
           index = 0;

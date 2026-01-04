@@ -84,11 +84,7 @@ class SubtitleRes {
   // 解析后的内容
   List<SubtitleResItem> content;
 
-  SubtitleRes(
-    this.content, {
-    this.success = true,
-    this.msg = "ok",
-  });
+  SubtitleRes(this.content, {this.success = true, this.msg = "ok"});
 
   @override
   String toString() {
