@@ -1,7 +1,9 @@
 name: common_dart
 description: A starting point for Dart libraries or applications.
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+homepage: https://github.com/jiangwenfan/common_flutter
+repository: https://github.com/jiangwenfan/common_flutter
+issue_tracker: https://github.com/jiangwenfan/common_flutter/issues
 
 environment:
   sdk: ^3.9.2
