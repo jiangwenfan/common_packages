@@ -39,9 +39,9 @@ class TtsMicrosoft {
     Dio? dio,
     BaseOptions? dioOptions,
   }) : accessTokenUrl =
-           'https://${locationRegion}.api.cognitive.microsoft.com/sts/v1.0/issueToken',
+           'https://$locationRegion.api.cognitive.microsoft.com/sts/v1.0/issueToken',
        textToSpeechUrl =
-           'https://${locationRegion}.tts.speech.microsoft.com/cognitiveservices/v1',
+           'https://$locationRegion.tts.speech.microsoft.com/cognitiveservices/v1',
        _dio = dio ?? Dio(dioOptions) {
     final style = _audioStyles[language]!;
     languageCode = style.languageCode;
@@ -123,7 +123,8 @@ class TtsMicrosoft {
     final errorBody = rawBody == null
         ? ''
         : utf8.decode(
-            rawBody is List<int> ? rawBody : utf8.encode(rawBody.toString()),
+            // rawBody is List<int> ? rawBody : utf8.encode(rawBody.toString()),
+            rawBody,
             allowMalformed: true,
           );
     throw HttpException(

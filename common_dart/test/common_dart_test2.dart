@@ -2,7 +2,6 @@ import 'package:common_dart/common_dart.dart';
 import 'package:test/test.dart';
 import 'package:common_dart/src/parse_subtitle/parse_srt_subtitle.dart';
 import 'package:common_dart/src/parse_subtitle/subtitle.dart';
-import 'dart:io';
 
 void main() {
   group('A group of tests', () {
