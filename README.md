@@ -16,6 +16,9 @@ dart test
 dart pub publish --dry-run
 
 dart pub publish
+
+
+https://pub.dev/packages/common_dart
 ```
 
 # common_flutter
