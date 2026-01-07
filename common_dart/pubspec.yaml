@@ -11,6 +11,8 @@ environment:
 # Add regular dependencies here.
 dependencies:
   dio: ^5.4.0
+  crypto: ^3.0.7
+  logger: ^2.6.2
 
 dev_dependencies:
   lints: ^6.0.0

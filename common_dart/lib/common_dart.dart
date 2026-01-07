@@ -10,3 +10,4 @@ export 'src/common_dart_base.dart';
 
 export 'translate.dart';
 export 'tts.dart';
+export 'src/logger/logger.dart';
