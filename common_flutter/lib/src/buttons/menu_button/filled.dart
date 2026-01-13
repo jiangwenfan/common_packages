@@ -1,21 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'base.dart';
 
 /// 菜单按钮: Filled样式的
 class CMenuButtonFilled extends StatelessWidget {
   final IconData? iconData;
   final String title;
+  final ButtonStatus status;
   final String route;
   const CMenuButtonFilled({
     super.key,
     this.iconData,
     required this.title,
+    this.status = ButtonStatus.red,
     required this.route,
   });
 
   @override
   Widget build(BuildContext context) {
     return FilledButton(
+      style: ButtonStyle(
+        backgroundColor: WidgetStatePropertyAll(
+          // 使用match
+          switch (status) {
+            ButtonStatus.red => Colors.red,
+            ButtonStatus.green => Colors.green,
+            ButtonStatus.yellow => Colors.yellow,
+          },
+        ),
+      ),
       onPressed: () {
         context.push(route);
       },
