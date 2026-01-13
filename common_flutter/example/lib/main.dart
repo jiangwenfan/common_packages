@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:common_flutter/common_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -108,6 +109,12 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            CMenuButtonCard(title: "demo1", route: "/demo1"),
+            CMenuButtonCard(
+              title: "demo1",
+              route: "/demo1",
+              iconData: Icons.add,
             ),
           ],
         ),
