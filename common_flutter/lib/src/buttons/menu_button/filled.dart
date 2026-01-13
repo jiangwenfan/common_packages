@@ -23,9 +23,9 @@ class CMenuButtonFilled extends StatelessWidget {
         backgroundColor: WidgetStatePropertyAll(
           // 使用match
           switch (status) {
-            ButtonStatus.red => Colors.red,
-            ButtonStatus.green => Colors.green,
-            ButtonStatus.yellow => Colors.yellow,
+            ButtonStatus.red => Colors.red[300],
+            ButtonStatus.green => Colors.green[300],
+            ButtonStatus.yellow => Colors.yellow[300],
           },
         ),
       ),
