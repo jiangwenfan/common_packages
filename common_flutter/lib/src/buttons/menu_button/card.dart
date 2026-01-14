@@ -35,9 +35,11 @@ class CMenuButtonCard extends HookWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               if (iconData != null) Icon(iconData!),
-              Text(
-                title,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              Flexible(
+                child: Text(
+                  title,
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
               ),
             ],
           ),

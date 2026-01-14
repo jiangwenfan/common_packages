@@ -1,6 +1,6 @@
 name: common_dart
 description: "公共 Dart 工具库"
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/jiangwenfan/common_flutter
 repository: https://github.com/jiangwenfan/common_flutter
 issue_tracker: https://github.com/jiangwenfan/common_flutter/issues

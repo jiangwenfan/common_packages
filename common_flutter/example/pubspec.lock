@@ -47,7 +47,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "1.0.4"
+    version: "1.0.5"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -70,7 +70,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_hooks:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_hooks
       sha256: "8ae1f090e5f4ef5cfa6670ce1ab5dddadd33f3533a7f9ba19d9f958aa2a89f42"
@@ -96,7 +96,7 @@ packages:
     source: sdk
     version: "0.0.0"
   go_router:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: go_router
       sha256: eff94d2a6fc79fa8b811dde79c7549808c2346037ee107a1121b4a644c745f2a
