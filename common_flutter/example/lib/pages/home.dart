@@ -28,6 +28,12 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: Text("button 例子"),
             ),
+            FilledButton(
+              onPressed: () {
+                context.push("/tabs");
+              },
+              child: Text("tabs 例子"),
+            ),
           ],
         ),
       ),

@@ -5,6 +5,8 @@ export 'src/buttons/menu_button/base.dart';
 export 'src/dividers/divider_plus.dart';
 export 'src/checkboxs/checkbox_plus.dart';
 export 'src/page/page.dart';
+export 'src/tabs/tab.dart';
+export 'src/tabs/type.dart';
 
 class Calculator {
   /// Returns [value] plus 1.
