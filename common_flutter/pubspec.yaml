@@ -1,6 +1,6 @@
 name: common_flutter
 description: "flutter的自定义工具封装"
-version: 1.0.5
+version: 1.0.6
 homepage: https://github.com/jiangwenfan/common_flutter
 repository: https://github.com/jiangwenfan/common_flutter
 issue_tracker: https://github.com/jiangwenfan/common_flutter/issues

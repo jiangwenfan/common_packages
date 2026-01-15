@@ -13,3 +13,7 @@
 # 1.0.3
 
 - TODO: Describe changes in 1.0.3 release.
+
+# 1.0.6
+
+- TODO: Describe changes in 1.0.6 release.
