@@ -1,0 +1,21 @@
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    hostname: my-rabbit
+    image: rabbitmq:3.12.4-management
+    restart: unless-stopped
+    ports:
+      - "7070:15672" # web
+      - "10043:5672" # amqp
+    environment:
+      # web user and password
+      RABBITMQ_DEFAULT_USER: "root"
+      RABBITMQ_DEFAULT_PASS: "admin123"
+    networks:
+      - language-network
+
+
+
+networks:
+  language-network:
+    name: language-network

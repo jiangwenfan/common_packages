@@ -1,0 +1,1954 @@
+{
+  "normalizedSource": "fly",
+  "displaySource": "fly",
+  "translations": [
+    {
+      "normalizedTarget": "飞",
+      "displayTarget": "飞",
+      "posTag": "VERB",
+      "confidence": 0.2898,
+      "prefixWord": "",
+      "backTranslations": [
+        {
+          "normalizedText": "fly",
+          "displayText": "fly",
+          "numExamples": 15,
+          "frequencyCount": 4995
+        },
+        {
+          "normalizedText": "flying",
+          "displayText": "flying",
+          "numExamples": 15,
+          "frequencyCount": 1931
+        },
+        {
+          "normalizedText": "flew",
+          "displayText": "flew",
+          "numExamples": 15,
+          "frequencyCount": 968
+        },
+        {
+          "normalizedText": "flight",
+          "displayText": "flight",
+          "numExamples": 15,
+          "frequencyCount": 340
+        },
+        {
+          "normalizedText": "flies",
+          "displayText": "flies",
+          "numExamples": 15,
+          "frequencyCount": 253
+        },
+        {
+          "normalizedText": "fei",
+          "displayText": "Fei",
+          "numExamples": 10,
+          "frequencyCount": 237
+        },
+        {
+          "normalizedText": "flown",
+          "displayText": "flown",
+          "numExamples": 5,
+          "frequencyCount": 127
+        }
+      ],
+      "examples": [
+        {
+          "sourcePrefix": "You should ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " up and surprise him.",
+          "target": [
+            {
+              "targetPrefix": "你应该",
+              "targetTerm": "飞",
+              "targetSuffix": "到他身边 给他个惊喜"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "You a sons all followed to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " up brain!",
+          "target": [
+            {
+              "targetPrefix": "你们一家子都跟着",
+              "targetTerm": "飞",
+              "targetSuffix": "上了枝头啦！"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "You can ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ", you can fly.",
+          "target": [
+            {
+              "targetPrefix": "你能",
+              "targetTerm": "飞",
+              "targetSuffix": "的, 你能飞的."
+            },
+            {
+              "targetPrefix": "你能飞的, 你能",
+              "targetTerm": "飞",
+              "targetSuffix": "的."
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Ever wanted to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": "?",
+          "target": [
+            {
+              "targetPrefix": "以前有没有想要",
+              "targetTerm": "飞",
+              "targetSuffix": "？"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "",
+          "sourceTerm": "Fly",
+          "sourceSuffix": " with you later!",
+          "target": [
+            {
+              "targetPrefix": "以后和你一起",
+              "targetTerm": "飞",
+              "targetSuffix": "去大陆"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Birds can ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " above the trees.",
+          "target": [
+            {
+              "targetPrefix": "鸟能够",
+              "targetTerm": "飞",
+              "targetSuffix": "到树之上。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "One day people will ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " to the moon for vacation.",
+          "target": [
+            {
+              "targetPrefix": "将来某一天人们会",
+              "targetTerm": "飞",
+              "targetSuffix": "到月球度假。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "I have to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " home in the morning.",
+          "target": [
+            {
+              "targetPrefix": "我早上就要",
+              "targetTerm": "飞",
+              "targetSuffix": "回国了"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "They can ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " high in the sky.",
+          "target": [
+            {
+              "targetPrefix": "他们能在天空中",
+              "targetTerm": "飞",
+              "targetSuffix": "高。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Birds can ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " in the air.",
+          "target": [
+            {
+              "targetPrefix": "鸟儿会",
+              "targetTerm": "飞",
+              "targetSuffix": "在空中。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "We ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " out of the castle of the panic.",
+          "target": [
+            {
+              "targetPrefix": "我们惊慌失措的",
+              "targetTerm": "飞",
+              "targetSuffix": "出城堡。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Will you ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " with wings?",
+          "target": [
+            {
+              "targetPrefix": "有天你会用翅膀",
+              "targetTerm": "飞",
+              "targetSuffix": "？"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "He said he could ",
+          "sourceTerm": "fly",
+          "sourceSuffix": "!",
+          "target": [
+            {
+              "targetPrefix": "他说他能",
+              "targetTerm": "飞",
+              "targetSuffix": ""
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "I could ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " to wherever you are.",
+          "target": [
+            {
+              "targetPrefix": "我能",
+              "targetTerm": "飞",
+              "targetSuffix": "到你那里去"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalizedTarget": "飞翔",
+      "displayTarget": "飞翔",
+      "posTag": "VERB",
+      "confidence": 0.1658,
+      "prefixWord": "",
+      "backTranslations": [
+        {
+          "normalizedText": "fly",
+          "displayText": "fly",
+          "numExamples": 15,
+          "frequencyCount": 937
+        },
+        {
+          "normalizedText": "flying",
+          "displayText": "flying",
+          "numExamples": 15,
+          "frequencyCount": 408
+        },
+        {
+          "normalizedText": "flight",
+          "displayText": "flight",
+          "numExamples": 15,
+          "frequencyCount": 105
+        },
+        {
+          "normalizedText": "soar",
+          "displayText": "soar",
+          "numExamples": 5,
+          "frequencyCount": 35
+        },
+        {
+          "normalizedText": "soaring",
+          "displayText": "soaring",
+          "numExamples": 5,
+          "frequencyCount": 34
+        },
+        {
+          "normalizedText": "flies",
+          "displayText": "flies",
+          "numExamples": 6,
+          "frequencyCount": 24
+        },
+        {
+          "normalizedText": "feixiang",
+          "displayText": "Feixiang",
+          "numExamples": 0,
+          "frequencyCount": 9
+        }
+      ],
+      "examples": [
+        {
+          "sourcePrefix": "Feeling the happiness for ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "感受着",
+              "targetTerm": "飞翔",
+              "targetSuffix": "的快乐。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "He taught her to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "他教她",
+              "targetTerm": "飞翔",
+              "targetSuffix": "."
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "I will turn you on, and lets ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "我将会唤醒你，然后一起",
+              "targetTerm": "飞翔",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Then you'll learn to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "然后你就能学会",
+              "targetTerm": "飞翔",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Birds ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " in the air.",
+          "target": [
+            {
+              "targetPrefix": "鸟儿在天空",
+              "targetTerm": "飞翔",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "I believe i can ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " !",
+          "target": [
+            {
+              "targetPrefix": "我相信我可以",
+              "targetTerm": "飞翔",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "I will ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " with you.",
+          "target": [
+            {
+              "targetPrefix": "我要和你一起",
+              "targetTerm": "飞翔",
+              "targetSuffix": ""
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "You gave me wings and made me ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "你给了我翅膀使我可以",
+              "targetTerm": "飞翔",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "A man cannot ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " just as a bird cannot speak.",
+          "target": [
+            {
+              "targetPrefix": "人不能",
+              "targetTerm": "飞翔",
+              "targetSuffix": "就象鸟儿不能说话一样。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "If we can ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ", what will you do?",
+          "target": [
+            {
+              "targetPrefix": "如果我们可以",
+              "targetTerm": "飞翔",
+              "targetSuffix": "，你会做什么？"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "But only in small space, ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "却只能在小小的空间里，",
+              "targetTerm": "飞翔",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Men have always wanted to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " like birds.",
+          "target": [
+            {
+              "targetPrefix": "男人们总是希望像鸟一样",
+              "targetTerm": "飞翔",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "I hope you can ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " in the sky freely .",
+          "target": [
+            {
+              "targetPrefix": "我希望你可以在天空自由地",
+              "targetTerm": "飞翔",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Let me rise and ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " away.",
+          "target": [
+            {
+              "targetPrefix": "让我起床去",
+              "targetTerm": "飞翔",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Here you can like a kite the same ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "在这里你能象风筝一样的",
+              "targetTerm": "飞翔",
+              "targetSuffix": "。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalizedTarget": "飞行",
+      "displayTarget": "飞行",
+      "posTag": "VERB",
+      "confidence": 0.1114,
+      "prefixWord": "",
+      "backTranslations": [
+        {
+          "normalizedText": "flight",
+          "displayText": "flight",
+          "numExamples": 15,
+          "frequencyCount": 4888
+        },
+        {
+          "normalizedText": "flying",
+          "displayText": "flying",
+          "numExamples": 15,
+          "frequencyCount": 2277
+        },
+        {
+          "normalizedText": "fly",
+          "displayText": "fly",
+          "numExamples": 15,
+          "frequencyCount": 961
+        },
+        {
+          "normalizedText": "flew",
+          "displayText": "flew",
+          "numExamples": 15,
+          "frequencyCount": 109
+        },
+        {
+          "normalizedText": "flown",
+          "displayText": "flown",
+          "numExamples": 5,
+          "frequencyCount": 80
+        },
+        {
+          "normalizedText": "flies",
+          "displayText": "flies",
+          "numExamples": 15,
+          "frequencyCount": 77
+        }
+      ],
+      "examples": [
+        {
+          "sourcePrefix": "Birds learn to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " by instinct.",
+          "target": [
+            {
+              "targetPrefix": "鸟靠本能学会",
+              "targetTerm": "飞行",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "She taught me how to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "她教我如何",
+              "targetTerm": "飞行",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "To know me is to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " with me.",
+          "target": [
+            {
+              "targetPrefix": "想要了解我就要和我一起",
+              "targetTerm": "飞行",
+              "targetSuffix": ""
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Can dragons ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " indefinitely?",
+          "target": [
+            {
+              "targetPrefix": "龙是否可以无限制的",
+              "targetTerm": "飞行",
+              "targetSuffix": "？"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "The ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " is ticklish.",
+          "target": [
+            {
+              "targetPrefix": "",
+              "targetTerm": "飞行",
+              "targetSuffix": "是易倒的。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "They ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " in the rain.",
+          "target": [
+            {
+              "targetPrefix": "他们在雨中",
+              "targetTerm": "飞行",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Before locusts ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ", they march.",
+          "target": [
+            {
+              "targetPrefix": "在蝗虫",
+              "targetTerm": "飞行",
+              "targetSuffix": "之前，它们通常是在爬行。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Let us say, they ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " in their sleep.",
+          "target": [
+            {
+              "targetPrefix": "我们可以这样说, 它们在睡梦中",
+              "targetTerm": "飞行",
+              "targetSuffix": "."
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "The shape of the plane also helps a plane ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "飞机的形状也有助于它",
+              "targetTerm": "飞行",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Come to watch me ",
+          "sourceTerm": "fly",
+          "sourceSuffix": "?",
+          "target": [
+            {
+              "targetPrefix": "来参观我",
+              "targetTerm": "飞行",
+              "targetSuffix": "吗?"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Birds use their wings to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "鸟类用翅膀",
+              "targetTerm": "飞行",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "That would explain why they can ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " in utter darkness.",
+          "target": [
+            {
+              "targetPrefix": "这可以解释为什么它们能够在漆黑中",
+              "targetTerm": "飞行",
+              "targetSuffix": "."
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "I could be spending all this time learning to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "我可以把所有这些时间都用来学",
+              "targetTerm": "飞行",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "His hands swell up whenever we ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "每次",
+              "targetTerm": "飞行",
+              "targetSuffix": "他的手都会肿."
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Zip ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " and snap waist.",
+          "target": [
+            {
+              "targetPrefix": "邮编",
+              "targetTerm": "飞行",
+              "targetSuffix": "和捕捉腰。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalizedTarget": "只 苍蝇",
+      "displayTarget": "只苍蝇",
+      "posTag": "NOUN",
+      "confidence": 0.1062,
+      "prefixWord": "",
+      "backTranslations": [
+        {
+          "normalizedText": "fly",
+          "displayText": "fly",
+          "numExamples": 15,
+          "frequencyCount": 189
+        },
+        {
+          "normalizedText": "flies",
+          "displayText": "flies",
+          "numExamples": 4,
+          "frequencyCount": 8
+        }
+      ],
+      "examples": [
+        {
+          "sourcePrefix": "A ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " flies into the kitchen.",
+          "target": [
+            {
+              "targetPrefix": "有一",
+              "targetTerm": "只苍蝇",
+              "targetSuffix": "飞进厨房里"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Watch me wrap up this ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "看我怎样抓住这",
+              "targetTerm": "只苍蝇",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "That ",
+          "sourceTerm": "fly",
+          "sourceSuffix": "'s supposed to fly towards me.",
+          "target": [
+            {
+              "targetPrefix": "那",
+              "targetTerm": "只苍蝇",
+              "targetSuffix": "本来是飞来我这边的"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Sure enough, he managed to catch a ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "的确有效，他终于抓住一",
+              "targetTerm": "只苍蝇",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "I want to have a ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " of my own.",
+          "target": [
+            {
+              "targetPrefix": "我想有我自己的一",
+              "targetTerm": "只苍蝇",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "A flea and a ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " flew up in a flue.",
+          "target": [
+            {
+              "targetPrefix": "一只跳蚤和一",
+              "targetTerm": "只苍蝇",
+              "targetSuffix": "飞进烟道里。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "He walked up the wall like a ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "他像一",
+              "targetTerm": "只苍蝇",
+              "targetSuffix": "一样爬到墙上"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "There is ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " on the ceiling.",
+          "target": [
+            {
+              "targetPrefix": "天花板上有一",
+              "targetTerm": "只苍蝇",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "There is a ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " in my soup?",
+          "target": [
+            {
+              "targetPrefix": "我的汤中有一",
+              "targetTerm": "只苍蝇",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "The ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " became entangled in the spider's web.",
+          "target": [
+            {
+              "targetPrefix": "这",
+              "targetTerm": "只苍蝇",
+              "targetSuffix": "与蜘蛛网纠缠在一起。"
+            },
+            {
+              "targetPrefix": "这",
+              "targetTerm": "只苍蝇",
+              "targetSuffix": "陷入了蜘蛛的网。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "A ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " is on the ceiling.",
+          "target": [
+            {
+              "targetPrefix": "一",
+              "targetTerm": "只苍蝇",
+              "targetSuffix": "在天花板上。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Waiter there is a ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " in my soup!",
+          "target": [
+            {
+              "targetPrefix": "汤里有",
+              "targetTerm": "只苍蝇",
+              "targetSuffix": "！"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "There is a ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " on the table.",
+          "target": [
+            {
+              "targetPrefix": "桌子上有",
+              "targetTerm": "只苍蝇",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Here comes a ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "飞来了一",
+              "targetTerm": "只苍蝇",
+              "targetSuffix": "。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalizedTarget": "苍蝇",
+      "displayTarget": "苍蝇",
+      "posTag": "NOUN",
+      "confidence": 0.1058,
+      "prefixWord": "",
+      "backTranslations": [
+        {
+          "normalizedText": "flies",
+          "displayText": "flies",
+          "numExamples": 15,
+          "frequencyCount": 583
+        },
+        {
+          "normalizedText": "fly",
+          "displayText": "fly",
+          "numExamples": 15,
+          "frequencyCount": 356
+        }
+      ],
+      "examples": [
+        {
+          "sourcePrefix": "The spider or the ",
+          "sourceTerm": "fly",
+          "sourceSuffix": "?",
+          "target": [
+            {
+              "targetPrefix": "蜘蛛?还是落网的",
+              "targetTerm": "苍蝇",
+              "targetSuffix": "?"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "And my breath smells like ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "还有我嘴巴里有",
+              "targetTerm": "苍蝇",
+              "targetSuffix": "味道 不哭"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "See the screen flew the ",
+          "sourceTerm": "fly",
+          "sourceSuffix": "?",
+          "target": [
+            {
+              "targetPrefix": "看到画面中飞来飞去的",
+              "targetTerm": "苍蝇",
+              "targetSuffix": "了吗？"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Why did the ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ", fly?",
+          "target": [
+            {
+              "targetPrefix": "",
+              "targetTerm": "苍蝇",
+              "targetSuffix": "什么时候会逃跑?"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Project a ",
+          "sourceTerm": "fly",
+          "sourceSuffix": "'s shadow to the wall.",
+          "target": [
+            {
+              "targetPrefix": "把",
+              "targetTerm": "苍蝇",
+              "targetSuffix": "的影子投到墙上。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Except for that ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " city he sat on.",
+          "target": [
+            {
+              "targetPrefix": "除非他坐在了",
+              "targetTerm": "苍蝇",
+              "targetSuffix": "城上"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "On your way, old ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " eater.",
+          "target": [
+            {
+              "targetPrefix": "走吧,吃",
+              "targetTerm": "苍蝇",
+              "targetSuffix": "的老东西."
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "The ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " flies past my desk.",
+          "target": [
+            {
+              "targetPrefix": "",
+              "targetTerm": "苍蝇",
+              "targetSuffix": "飞过我的课桌。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Because a ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " has a great sense of s.",
+          "target": [
+            {
+              "targetPrefix": "因为",
+              "targetTerm": "苍蝇",
+              "targetSuffix": "有灵敏的嗅."
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "I want to ride the wind rushed to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " home.",
+          "target": [
+            {
+              "targetPrefix": "我想要骑风冲向",
+              "targetTerm": "苍蝇",
+              "targetSuffix": "回家。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Eat a virus ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " bite climb food.",
+          "target": [
+            {
+              "targetPrefix": "吃有病毒之",
+              "targetTerm": "苍蝇",
+              "targetSuffix": "叮爬过的食物。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "You listen up, fruit ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "你给我听好了,水果",
+              "targetTerm": "苍蝇",
+              "targetSuffix": ""
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Care to see the ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " get even?",
+          "target": [
+            {
+              "targetPrefix": "想过",
+              "targetTerm": "苍蝇",
+              "targetSuffix": "会报仇吗?"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "He was only a ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " on the wheel.",
+          "target": [
+            {
+              "targetPrefix": "他不过是车轮上的",
+              "targetTerm": "苍蝇",
+              "targetSuffix": ",妄自尊大."
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Not a ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " nor a mosquito was to be found.",
+          "target": [
+            {
+              "targetPrefix": "无论",
+              "targetTerm": "苍蝇",
+              "targetSuffix": "还是蚊子都没有发现。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalizedTarget": "乘 飞机",
+      "displayTarget": "乘飞机",
+      "posTag": "VERB",
+      "confidence": 0.0622,
+      "prefixWord": "",
+      "backTranslations": [
+        {
+          "normalizedText": "fly",
+          "displayText": "fly",
+          "numExamples": 15,
+          "frequencyCount": 89
+        },
+        {
+          "normalizedText": "flying",
+          "displayText": "flying",
+          "numExamples": 15,
+          "frequencyCount": 82
+        },
+        {
+          "normalizedText": "flew",
+          "displayText": "flew",
+          "numExamples": 4,
+          "frequencyCount": 26
+        },
+        {
+          "normalizedText": "flown",
+          "displayText": "flown",
+          "numExamples": 4,
+          "frequencyCount": 13
+        }
+      ],
+      "examples": [
+        {
+          "sourcePrefix": "Tomorrow we're going to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " home.",
+          "target": [
+            {
+              "targetPrefix": "明天我们将",
+              "targetTerm": "乘飞机",
+              "targetSuffix": "回家"
+            },
+            {
+              "targetPrefix": "明天我们就",
+              "targetTerm": "乘飞机",
+              "targetSuffix": "回家了。"
+            },
+            {
+              "targetPrefix": "明天我们就要",
+              "targetTerm": "乘飞机",
+              "targetSuffix": "回家"
+            },
+            {
+              "targetPrefix": "明天我们就要",
+              "targetTerm": "乘飞机",
+              "targetSuffix": "回家了。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "No students ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " to school.",
+          "target": [
+            {
+              "targetPrefix": "没有学生",
+              "targetTerm": "乘飞机",
+              "targetSuffix": "上学。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "I ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " home tomorrow afternoon.",
+          "target": [
+            {
+              "targetPrefix": "我明天下午",
+              "targetTerm": "乘飞机",
+              "targetSuffix": "回家"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "You can ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " or take the train.",
+          "target": [
+            {
+              "targetPrefix": "你可以",
+              "targetTerm": "乘飞机",
+              "targetSuffix": "或者火车去。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "... example of people who drive rather than ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "... 宁愿开车也死活不愿",
+              "targetTerm": "乘飞机",
+              "targetSuffix": "的人为例。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "You didn't ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " in by jet?",
+          "target": [
+            {
+              "targetPrefix": "开玩笑?你没",
+              "targetTerm": "乘飞机",
+              "targetSuffix": "?"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "we will ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " home tomorrow.",
+          "target": [
+            {
+              "targetPrefix": "明天我们要",
+              "targetTerm": "乘飞机",
+              "targetSuffix": "回家了。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "... , so let's ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " instead.",
+          "target": [
+            {
+              "targetPrefix": "... ，所以我们还是改",
+              "targetTerm": "乘飞机",
+              "targetSuffix": "吧。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Most people ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ", but you can also ...",
+          "target": [
+            {
+              "targetPrefix": "大多是",
+              "targetTerm": "乘飞机",
+              "targetSuffix": "，但您也可以 ..."
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Most people ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ", but you can also take a one ...",
+          "target": [
+            {
+              "targetPrefix": "大多是",
+              "targetTerm": "乘飞机",
+              "targetSuffix": "，但您也可以坐 ..."
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Most people ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ", but you can also a - ...",
+          "target": [
+            {
+              "targetPrefix": "大多是",
+              "targetTerm": "乘飞机",
+              "targetSuffix": ",但您也可以 ..."
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "... more and more holidaymakers ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ", rather than drive to and ...",
+          "target": [
+            {
+              "targetPrefix": "... 越来越多的度假者开始",
+              "targetTerm": "乘飞机",
+              "targetSuffix": "，而不是驾车 ..."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalizedTarget": "飞走",
+      "displayTarget": "飞走",
+      "posTag": "VERB",
+      "confidence": 0.0615,
+      "prefixWord": "",
+      "backTranslations": [
+        {
+          "normalizedText": "flew",
+          "displayText": "flew",
+          "numExamples": 15,
+          "frequencyCount": 108
+        },
+        {
+          "normalizedText": "fly",
+          "displayText": "fly",
+          "numExamples": 15,
+          "frequencyCount": 91
+        },
+        {
+          "normalizedText": "flown",
+          "displayText": "flown",
+          "numExamples": 5,
+          "frequencyCount": 19
+        },
+        {
+          "normalizedText": "flies away",
+          "displayText": "flies away",
+          "numExamples": 5,
+          "frequencyCount": 18
+        }
+      ],
+      "examples": [
+        {
+          "sourcePrefix": "If you want to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " away, then fly.",
+          "target": [
+            {
+              "targetPrefix": "如果想",
+              "targetTerm": "飞走",
+              "targetSuffix": " 那就去吧"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Why would they just ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " away?",
+          "target": [
+            {
+              "targetPrefix": "那他们怎么",
+              "targetTerm": "飞走",
+              "targetSuffix": "了呢"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "And when they ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " away.",
+          "target": [
+            {
+              "targetPrefix": "当它们",
+              "targetTerm": "飞走",
+              "targetSuffix": "的时候"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "I will ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " away some day.",
+          "target": [
+            {
+              "targetPrefix": "总有一天我会",
+              "targetTerm": "飞走",
+              "targetSuffix": "的"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Let me rise and ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " away.",
+          "target": [
+            {
+              "targetPrefix": "让我起来",
+              "targetTerm": "飞走",
+              "targetSuffix": "吧。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "If you want to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " away, then fiy.",
+          "target": [
+            {
+              "targetPrefix": "如果你想",
+              "targetTerm": "飞走",
+              "targetSuffix": " 那就飞走吧"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "The birds ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " away.",
+          "target": [
+            {
+              "targetPrefix": "小鸟们",
+              "targetTerm": "飞走",
+              "targetSuffix": "了。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "I just can't ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " off and ignore it.",
+          "target": [
+            {
+              "targetPrefix": "我就是不能",
+              "targetTerm": "飞走",
+              "targetSuffix": " 忽略掉这事"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "She can make the boat ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "她能使船",
+              "targetTerm": "飞走",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Did it ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " away?",
+          "target": [
+            {
+              "targetPrefix": "它",
+              "targetTerm": "飞走",
+              "targetSuffix": "了吗?"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Kick it off and watch it ",
+          "sourceTerm": "fly",
+          "sourceSuffix": "!",
+          "target": [
+            {
+              "targetPrefix": "把烦恼踢开，然后看它",
+              "targetTerm": "飞走",
+              "targetSuffix": "！"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "The balloon will ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " off through the air very quickly.",
+          "target": [
+            {
+              "targetPrefix": "气球会",
+              "targetTerm": "飞走",
+              "targetSuffix": "通过空气非常快。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Give your stress wings and let it ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " away.",
+          "target": [
+            {
+              "targetPrefix": "给压力翅膀，让它",
+              "targetTerm": "飞走",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "We will ride this bus and ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " away.",
+          "target": [
+            {
+              "targetPrefix": "我们坐这车走,然后",
+              "targetTerm": "飞走",
+              "targetSuffix": ""
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Window to sing and ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " away.",
+          "target": [
+            {
+              "targetPrefix": "歌唱，又",
+              "targetTerm": "飞走",
+              "targetSuffix": "了。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalizedTarget": "翱翔",
+      "displayTarget": "翱翔",
+      "posTag": "VERB",
+      "confidence": 0.0575,
+      "prefixWord": "",
+      "backTranslations": [
+        {
+          "normalizedText": "fly",
+          "displayText": "fly",
+          "numExamples": 15,
+          "frequencyCount": 78
+        },
+        {
+          "normalizedText": "soar",
+          "displayText": "soar",
+          "numExamples": 5,
+          "frequencyCount": 62
+        },
+        {
+          "normalizedText": "flying",
+          "displayText": "flying",
+          "numExamples": 15,
+          "frequencyCount": 47
+        },
+        {
+          "normalizedText": "soaring",
+          "displayText": "soaring",
+          "numExamples": 5,
+          "frequencyCount": 29
+        },
+        {
+          "normalizedText": "hover",
+          "displayText": "hover",
+          "numExamples": 5,
+          "frequencyCount": 17
+        },
+        {
+          "normalizedText": "hovering",
+          "displayText": "hovering",
+          "numExamples": 0,
+          "frequencyCount": 3
+        }
+      ],
+      "examples": [
+        {
+          "sourcePrefix": "I would enjoy the feelings of ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " freely.",
+          "target": [
+            {
+              "targetPrefix": "我会享受自由",
+              "targetTerm": "翱翔",
+              "targetSuffix": "的感觉。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "... a wide space for me to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ".",
+          "target": [
+            {
+              "targetPrefix": "... 广阔的天空，任我",
+              "targetTerm": "翱翔",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "... strong wing, it can not ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " normally.",
+          "target": [
+            {
+              "targetPrefix": "... 强，就无法正常地",
+              "targetTerm": "翱翔",
+              "targetSuffix": "；"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "... it can take us ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " in the sun.",
+          "target": [
+            {
+              "targetPrefix": "... 它可以带着我们在阳光下",
+              "targetTerm": "翱翔",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "give it time, you'll learn to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": "",
+          "target": [
+            {
+              "targetPrefix": "不要着急,你会学会",
+              "targetTerm": "翱翔",
+              "targetSuffix": ""
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "For the green valleys where dragons ",
+          "sourceTerm": "fly",
+          "sourceSuffix": "",
+          "target": [
+            {
+              "targetPrefix": "为了群龙",
+              "targetTerm": "翱翔",
+              "targetSuffix": "的翠绿山谷"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "you just ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " through the air.",
+          "target": [
+            {
+              "targetPrefix": "你简直是",
+              "targetTerm": "翱翔",
+              "targetSuffix": "在空中"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "You ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " to the sky leaving me",
+          "target": [
+            {
+              "targetPrefix": "你离开我去远空",
+              "targetTerm": "翱翔",
+              "targetSuffix": ""
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "I am proud to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " up high",
+          "target": [
+            {
+              "targetPrefix": "我为能高高",
+              "targetTerm": "翱翔",
+              "targetSuffix": "而自豪"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "there is only one sky to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": "",
+          "target": [
+            {
+              "targetPrefix": "只有一个天空可以",
+              "targetTerm": "翱翔",
+              "targetSuffix": ""
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Get their wings and ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " around",
+          "target": [
+            {
+              "targetPrefix": "拥有对儿翅膀四处",
+              "targetTerm": "翱翔",
+              "targetSuffix": ""
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "We will ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ", claim the sky",
+          "target": [
+            {
+              "targetPrefix": "我们将",
+              "targetTerm": "翱翔",
+              "targetSuffix": "，放声在高空"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "... as the heart, hope dove ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " freely.",
+          "target": [
+            {
+              "targetPrefix": "... 的心一样，但愿白鸽自由",
+              "targetTerm": "翱翔",
+              "targetSuffix": "。"
+            },
+            {
+              "targetPrefix": "... 的心一样，希望白鸽自由",
+              "targetTerm": "翱翔",
+              "targetSuffix": "。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "... , our time to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ", our time to ...",
+          "target": [
+            {
+              "targetPrefix": "... ，我们的时代在",
+              "targetTerm": "翱翔",
+              "targetSuffix": "，属于我们的时代 ..."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalizedTarget": "驾驶",
+      "displayTarget": "驾驶",
+      "posTag": "VERB",
+      "confidence": 0.0397,
+      "prefixWord": "",
+      "backTranslations": [
+        {
+          "normalizedText": "driving",
+          "displayText": "driving",
+          "numExamples": 15,
+          "frequencyCount": 5109
+        },
+        {
+          "normalizedText": "driver",
+          "displayText": "driver",
+          "numExamples": 15,
+          "frequencyCount": 699
+        },
+        {
+          "normalizedText": "fly",
+          "displayText": "fly",
+          "numExamples": 15,
+          "frequencyCount": 153
+        },
+        {
+          "normalizedText": "drove",
+          "displayText": "drove",
+          "numExamples": 15,
+          "frequencyCount": 104
+        },
+        {
+          "normalizedText": "pilot",
+          "displayText": "pilot",
+          "numExamples": 15,
+          "frequencyCount": 92
+        },
+        {
+          "normalizedText": "motorists",
+          "displayText": "motorists",
+          "numExamples": 5,
+          "frequencyCount": 88
+        },
+        {
+          "normalizedText": "piloting",
+          "displayText": "piloting",
+          "numExamples": 5,
+          "frequencyCount": 54
+        }
+      ],
+      "examples": [
+        {
+          "sourcePrefix": "Can you ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " it?",
+          "target": [
+            {
+              "targetPrefix": "你能",
+              "targetTerm": "驾驶",
+              "targetSuffix": "它吗?"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "We get to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " them?",
+          "target": [
+            {
+              "targetPrefix": "我们要",
+              "targetTerm": "驾驶",
+              "targetSuffix": "它们了?"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "He said he could ",
+          "sourceTerm": "fly",
+          "sourceSuffix": "!",
+          "target": [
+            {
+              "targetPrefix": "他说他会",
+              "targetTerm": "驾驶",
+              "targetSuffix": "!"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Have you ever wanted to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " a plane?",
+          "target": [
+            {
+              "targetPrefix": "您曾想要",
+              "targetTerm": "驾驶",
+              "targetSuffix": "飞机吗？"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "You know how to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " this thing?",
+          "target": [
+            {
+              "targetPrefix": "你知道怎么",
+              "targetTerm": "驾驶",
+              "targetSuffix": "这玩意儿吗?"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "They needed someone to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " the helicopter, right?",
+          "target": [
+            {
+              "targetPrefix": "他们需要有人",
+              "targetTerm": "驾驶",
+              "targetSuffix": "直升机,对么?"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "You can ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " this plane?",
+          "target": [
+            {
+              "targetPrefix": "你能",
+              "targetTerm": "驾驶",
+              "targetSuffix": "这飞机吗?"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Who do you think they'll let ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " it?",
+          "target": [
+            {
+              "targetPrefix": "你觉得上面会让谁来",
+              "targetTerm": "驾驶",
+              "targetSuffix": "它呢?"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "",
+          "sourceTerm": "Fly",
+          "sourceSuffix": " shuttles to space.",
+          "target": [
+            {
+              "targetPrefix": "工作内容：",
+              "targetTerm": "驾驶",
+              "targetSuffix": "飞船前往太空。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "We could ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " planes.",
+          "target": [
+            {
+              "targetPrefix": "我们可以",
+              "targetTerm": "驾驶",
+              "targetSuffix": "飞机。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Would you like to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " it?",
+          "target": [
+            {
+              "targetPrefix": "你要",
+              "targetTerm": "驾驶",
+              "targetSuffix": "吗?"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "I wantto ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " planes.",
+          "target": [
+            {
+              "targetPrefix": "我想",
+              "targetTerm": "驾驶",
+              "targetSuffix": "飞机。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "I want to ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " planes.",
+          "target": [
+            {
+              "targetPrefix": "我想去",
+              "targetTerm": "驾驶",
+              "targetSuffix": "飞机。"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "You two ",
+          "sourceTerm": "fly",
+          "sourceSuffix": ", just tell me what to do.",
+          "target": [
+            {
+              "targetPrefix": "你们俩",
+              "targetTerm": "驾驶",
+              "targetSuffix": " 告诉我怎么修就行"
+            }
+          ]
+        },
+        {
+          "sourcePrefix": "Now we can ",
+          "sourceTerm": "fly",
+          "sourceSuffix": " this thing.",
+          "target": [
+            {
+              "targetPrefix": "现在我们能",
+              "targetTerm": "驾驶",
+              "targetSuffix": "这玩意儿."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "audio_data": "audio_data_字节数据"
+}

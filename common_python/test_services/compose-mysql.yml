@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: temp-mysql
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: admin@123K#
+      MYSQL_DATABASE: temp_test_db
+    volumes:
+      - ./init_mysql.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: '/usr/bin/mysql --user=root --password=admin@123K# --execute "SHOW DATABASES;"'
+      interval: 10s
+      timeout: 10s
+      retries: 60

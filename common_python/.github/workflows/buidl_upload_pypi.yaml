@@ -1,0 +1,59 @@
+name: build and upload package to pypi
+
+on:
+  push:
+    paths:
+      - "common_packages/**"
+      - "pyproject.toml"
+  workflow_dispatch: # 添加手动触发器
+    inputs:
+      custom_version: # 可选，允许用户输入自定义版本号
+        description: "Custom version for the build"
+        required: false
+        default: ""
+
+# TODO 增加自定义构建版本
+
+jobs:
+  deploy:
+    name: build package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: pull code
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.11.2
+
+      - name: Install system dependencies
+        run: sudo apt-get update && sudo apt-get install -y libffi-dev
+
+      - name: Install poetry
+        run: |
+          pip install poetry && poetry config virtualenvs.create false
+
+      - name: Install Dependencies
+        run: poetry install
+
+      # - name: build package
+      #   run: python -m build
+      # - name: build package with Poetry
+      #   run: poetry build
+
+      # - name: create pypi config
+      #   run: |
+      #     echo "[pypi]" > ~/.pypirc
+      #     echo "username = __token__" >> ~/.pypirc
+      #     echo "password = ${{ secrets.PYPI_TOKEN}}" >> ~/.pypirc
+
+      # - name: upload package
+      #   run: cat ~/.pypirc && twine upload  dist/*
+
+      - name: Configure PyPI token
+        run: poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
+
+      - name: Publish to PyPI
+        run: poetry publish --build
