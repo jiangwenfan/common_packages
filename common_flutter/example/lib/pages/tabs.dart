@@ -24,6 +24,44 @@ class TabsExample extends HookWidget {
         content: Container(width: 300, height: 300, color: Colors.red[300]),
       ),
     ];
+
+    final d2 = [
+      TabType(
+        key: "1",
+        title: Text('按钮1'),
+        content: Container(width: 100, height: 100, color: Colors.blue[300]),
+      ),
+      TabType(
+        key: "2",
+        title: Text('按钮2'),
+        content: Container(width: 200, height: 200, color: Colors.green[300]),
+      ),
+      TabType(
+        key: "3",
+        title: Text('按钮3'),
+        content: Container(width: 300, height: 300, color: Colors.red[300]),
+      ),
+      TabType(
+        key: "4",
+        title: Text('按钮4'),
+        content: Container(width: 300, height: 300, color: Colors.red[300]),
+      ),
+      TabType(
+        key: "5",
+        title: Text('按钮5'),
+        content: Container(width: 300, height: 300, color: Colors.red[300]),
+      ),
+      TabType(
+        key: "6",
+        title: Text('按钮6'),
+        content: Container(width: 300, height: 300, color: Colors.red[300]),
+      ),
+      TabType(
+        key: "7",
+        title: Text('按钮7'),
+        content: Container(width: 300, height: 300, color: Colors.red[300]),
+      ),
+    ];
     return Scaffold(
       appBar: AppBar(title: Text("tabs example")),
       body: ListView(
@@ -37,6 +75,10 @@ class TabsExample extends HookWidget {
           // 不输入initialKey,就显示第一个tab
           SizedBox(height: 20),
           CTabs(tabs: d),
+
+          //
+          SizedBox(height: 20),
+          CTabs(tabs: d2),
         ],
       ),
     );

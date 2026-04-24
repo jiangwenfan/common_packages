@@ -33,9 +33,14 @@ class CTabs extends HookWidget {
         children: [
           // 按钮区
           Wrap(
+            spacing: 6,
             children: [
               ...tabs.map(
                 (e) => FilledButton(
+                  // 内边距
+                  style: FilledButton.styleFrom(
+                    padding: EdgeInsets.symmetric(horizontal: 5, vertical: 0),
+                  ),
                   onPressed: () {
                     selectedIndex.value = e.key!;
                   },
@@ -45,7 +50,8 @@ class CTabs extends HookWidget {
             ],
           ),
 
-          SizedBox(height: 20),
+          // SizedBox(height: 20),
+          Divider(height: 40),
 
           // 内容区
           ...tabs
