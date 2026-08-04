@@ -1,0 +1,59 @@
+# name: Publish to pub.dev
+
+# on:
+#   push:
+#     tags:
+#       - "v[0-9]+.[0-9]+.[0-9]+*" # tag-pattern on pub.dev: 'v{{version}}'
+
+# jobs:
+#   publish:
+#     runs-on: ubuntu-latest
+#     permissions:
+#       id-token: write
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+
+#       - name: Setup Flutter
+#         uses: subosito/flutter-action@v2
+#         with:
+#           flutter-version: "3.29.2" # 指定你的 Flutter 版本
+
+#       - name: Install dependencies
+#         run: cd common_flutter && flutter pub get
+
+#       - name: Publish to Pub.dev1
+#         run: |
+#           cd common_flutter && flutter pub publish --dry-run
+
+#       - name: Publish to Pub.dev2
+#         run: |
+#           cd common_flutter && flutter pub publish --force --skip-validation
+name: Publish to pub.dev
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.29.2"
+
+      - name: Get dependencies
+        run: flutter pub get
+        working-directory: common_flutter
+
+      - name: Publish to pub.dev
+        run: flutter pub publish --force
+        working-directory: common_flutter

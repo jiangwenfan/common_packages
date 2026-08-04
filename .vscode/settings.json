@@ -1,0 +1,4 @@
+{
+  "cmake.ignoreCMakeListsMissing": true,
+  "scm.defaultViewMode": "tree"
+}

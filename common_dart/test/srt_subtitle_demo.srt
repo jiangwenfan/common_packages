@@ -1,0 +1,19 @@
+1
+00:00:00,080 --> 00:00:01,439
+welcome to the course my name is john
+欢迎来到本课程，我的名字是 john
+
+2
+00:00:01,439 --> 00:00:03,600
+elder i'm the founder of codyme.com and
+Elder，我是 codyme.com 的创始人，
+
+3
+00:00:03,600 --> 00:00:05,120
+in this free and complete course i'll
+在这个免费且完整的课程中，我将
+
+4
+00:00:05,120 --> 00:00:06,879
+walk you step by step through the dark
+逐步引导您了解黑暗的

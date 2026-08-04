@@ -1,0 +1,100 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+default_language_version:
+  python: python3.11
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+      # trims trailing whitespace.
+      - id: trailing-whitespace
+      # ensures that a file is either empty,or ends with one newline.
+      - id: end-of-file-fixer
+      # prevents giant files from being committed
+      - id: check-added-large-files
+      # checks a common error of defining a docstring after code.
+      - id: check-docstring-first
+      # checks json files for parseable syntax.
+      - id: check-json
+      # checks xml files for parseable syntax.
+      - id: check-xml
+      # checks yaml files for parseable syntax.
+      - id: check-yaml
+      # detects the presence of private keys.
+      - id: detect-private-key
+      # verifies that test files are named correctly
+      # - id: name-tests-test
+      # sorts entries in requirements.txt
+      - id: requirements-txt-fixer
+
+  - repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+      # format code or ruff
+      - id: black
+
+  - repo: https://github.com/PyCQA/autoflake
+    rev: v2.2.0
+    hooks:
+      # remove all unused imports
+      - id: autoflake
+        args:
+          [
+            --remove-all-unused-imports,
+            --ignore-init-module-imports,
+            --recursive,
+          ]
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.9.0
+    hooks:
+      # automatically upgrade syntax for newer version of the language
+      - id: pyupgrade
+        args: [--py311-plus]
+
+  - repo: https://github.com/mxr/unkey
+    rev: v0.0.1
+    # automatically remove extra calls to keys()
+    # -[x for x in d.keys()]
+    # +[x for x in d]
+    hooks:
+      - id: unkey
+
+  - repo: https://github.com/dannysepler/rm_unneeded_f_str
+    rev: v0.2.0
+    # find and replace unnedded f-string in your code
+    # -f'hello'
+    # +'hello'
+    hooks:
+      - id: rm-unneeded-f-str
+# -   repo: https://github.com/jendrikseipp/vulture
+#     rev: 'v2.9.1'  # or any later Vulture version
+#     # find unsed code in your project
+#     hooks:
+#       - id: vulture
+
+# -   repo: https://github.com/pycqa/isort
+#     rev: 5.11.2
+#     hooks:
+#     -   id: isort
+#         name: isort (python)
+
+# ---当前不适用的---
+# -   repo: https://github.com/jshwi/docsig
+#     rev: v0.35.0
+#     # check docstring and function signature
+#     hooks:
+#       - id: docsig
+#         args:
+#           - "--check-class"
+#           - "--check-dunders"
+#           - "--check-overridden"
+#           - "--check-protected"
+#           - "--summary"
+
+# -   repo: https://github.com/dhruvmanila/remove-print-statements
+#     rev: 'v0.5.2'
+#     # remove all print statements in your code; 注释的不会被移除
+#     hooks:
+#     - id: remove-print-statements
+#         # args: ['--verbose']   # Show all the print statements to be removed
