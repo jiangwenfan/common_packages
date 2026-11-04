@@ -11,6 +11,7 @@ class ButtonExample extends HookWidget {
       appBar: AppBar(title: Text("ButtonExample")),
       body: Wrap(
         children: [
+          const CButton(title: '基础按钮（雏形）'),
           CMenuButtonCard(title: "demo1", route: "/demo1"),
           CMenuButtonCard(title: "container1234"),
           CMenuButtonCard(title: "demo1", route: "/demo1", iconData: Icons.add),

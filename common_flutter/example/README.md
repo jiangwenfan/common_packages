@@ -1,16 +1,15 @@
-# example
+# common_flutter 示例
 
-A new Flutter project.
+```bash
+flutter pub get
+flutter run -d macos
+```
 
-## Getting Started
+首页包含原有按钮、页签、隐私政策示例，以及合并后的搜索、筛选和登录表单示例。
+基础按钮与登录表单保留雏形状态，尚未实现业务回调和登录流程。
 
-This project is a starting point for a Flutter application.
+运行演示交互测试：
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter test
+```

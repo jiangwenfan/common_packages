@@ -1,29 +1,28 @@
-// 手机和验证码登陆
-
-// TODO: 自己实现ios风格的输入框
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
+/// 手机验证码登录表单雏形，目前只有国家/地区只读输入框。
+///
+/// TODO: 自己实现 iOS 风格的输入框；国家选择和登录流程尚未实现。
 class CPhoneForm extends HookWidget {
-  const CPhoneForm({Key? key}) : super(key: key);
+  const CPhoneForm({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    final colors = Theme.of(context).colorScheme;
+
+    return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
           TextField(
             readOnly: true,
-
             decoration: InputDecoration(
               labelText: '国家/地区',
               floatingLabelBehavior: FloatingLabelBehavior.auto,
-              suffixIcon: const Icon(Icons.expand_more), // 右侧下拉箭头
+              suffixIcon: const Icon(Icons.expand_more),
               filled: true,
-              fillColor: Theme.of(
-                context,
-              ).colorScheme.surface, // 或 Colors.grey[50]
+              fillColor: colors.surface,
               isDense: true,
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 16,
@@ -36,22 +35,17 @@ class CPhoneForm extends HookWidget {
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(14),
                 borderSide: BorderSide(
-                  color: Theme.of(
-                    context,
-                  ).colorScheme.onSurface.withOpacity(.87),
+                  color: colors.onSurface.withValues(alpha: .87),
                   width: 1.4,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(14),
-                borderSide: BorderSide(
-                  color: Theme.of(context).colorScheme.primary,
-                  width: 1.6,
-                ),
+                borderSide: BorderSide(color: colors.primary, width: 1.6),
               ),
             ),
             onTap: () {
-              print("点击了");
+              debugPrint('点击了');
             },
           ),
         ],

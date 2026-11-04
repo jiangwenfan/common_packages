@@ -42,7 +42,7 @@ class CTabs extends HookWidget {
                     padding: EdgeInsets.symmetric(horizontal: 5, vertical: 0),
                   ),
                   onPressed: () {
-                    selectedIndex.value = e.key!;
+                    selectedIndex.value = e.key;
                   },
                   child: e.title,
                 ),

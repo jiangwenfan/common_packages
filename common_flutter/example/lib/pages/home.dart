@@ -24,6 +24,12 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             FilledButton(
               onPressed: () {
+                context.push('/widgets');
+              },
+              child: const Text('搜索、筛选与登录表单'),
+            ),
+            FilledButton(
+              onPressed: () {
                 context.push("/button");
               },
               child: Text("button 例子"),

@@ -4,11 +4,16 @@ import 'pages/button.dart';
 import 'pages/home.dart';
 import 'pages/privacy_policy_view.dart';
 import 'pages/tabs.dart';
+import 'pages/widgets.dart';
 
 final routes = [
   GoRoute(path: "/home", builder: (context, state) => MyHomePage()),
   GoRoute(path: "/button", builder: (context, state) => ButtonExample()),
   GoRoute(path: "/tabs", builder: (context, state) => TabsExample()),
+  GoRoute(
+    path: "/widgets",
+    builder: (context, state) => const WidgetsExample(),
+  ),
   GoRoute(
     path: "/privacy_policy_view",
     builder: (context, state) => PrivacyPolicyViewExample(),

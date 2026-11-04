@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
+/// 基础按钮雏形：保留原来的点击日志，尚未接入业务回调。
 class CButton extends StatelessWidget {
-  final String title;
   const CButton({super.key, required this.title});
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        print('点击了按钮 $title');
+        debugPrint('点击了按钮 $title');
       },
-      child: Text(title, style: TextStyle(fontSize: 16)),
+      child: Text(title),
     );
   }
 }

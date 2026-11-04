@@ -1,44 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
+import 'filter_item.dart';
 import 'type_card.dart';
 
-class FilterItem {
-  final String text;
-  final IconData? icon;
-  final bool isSelected;
-
-  FilterItem({required this.text, this.icon, required this.isSelected});
-}
-
+/// 横向滚动的两行多选筛选列表。
 class CFilterList extends HookWidget {
-  final ValueNotifier<List<FilterItem>> items;
   const CFilterList({super.key, required this.items});
+
+  final ValueNotifier<List<FilterItem>> items;
 
   @override
   Widget build(BuildContext context) {
+    final currentItems = useValueListenable(items);
+
     return SizedBox(
       height: 70,
       child: GridView.builder(
-        // 横向滚动
         scrollDirection: Axis.horizontal,
-
-        // ios弹性
         physics: const BouncingScrollPhysics(),
-
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          // 2行
           crossAxisCount: 2,
-          // 水平列间距
           mainAxisSpacing: 10,
-          // 交叉轴（垂直）间距
           crossAxisSpacing: 10,
-
           childAspectRatio: 0.5,
         ),
-        itemCount: items.value.length,
+        itemCount: currentItems.length,
         itemBuilder: (context, index) {
-          final item = items.value[index];
+          final item = currentItems[index];
           return TypeCard(
             text: item.text,
             icon: item.icon,
