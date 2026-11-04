@@ -2,9 +2,43 @@ import 'package:common_flutter/common_flutter.dart';
 import 'package:example/main.dart';
 import 'package:example/router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  testWidgets('未配置服务时仍可打开 Dio 演示且不会发出请求', (tester) async {
+    router.go('/home');
+    await tester.pumpWidget(const MyApp());
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Dio 请求演示'));
+    await tester.pumpAndSettle();
+    expect(find.text('尚未配置演示服务地址'), findsOneWidget);
+    final buttons = tester.widgetList<ElevatedButton>(
+      find.byType(ElevatedButton),
+    );
+    expect(buttons, hasLength(6));
+    expect(buttons.every((button) => button.onPressed == null), isTrue);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('平台接口示例处理缺少原生实现的情况', (tester) async {
+    const channel = MethodChannel('common_flutter');
+    final messenger =
+        TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger;
+    messenger.setMockMethodCallHandler(channel, (_) async {
+      throw MissingPluginException();
+    });
+    addTearDown(() => messenger.setMockMethodCallHandler(channel, null));
+    router.go('/home');
+    await tester.pumpWidget(const MyApp());
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('平台接口雏形'));
+    await tester.pumpAndSettle();
+    expect(find.text('Running on: 当前包尚无原生插件实现'), findsOneWidget);
+    expect(find.byType(MyCustomWidget), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
   testWidgets('从首页访问合并后的演示并操作搜索和筛选', (tester) async {
     router.go('/home');
     await tester.pumpWidget(const MyApp());

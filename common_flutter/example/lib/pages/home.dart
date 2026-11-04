@@ -23,6 +23,14 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             FilledButton(
+              onPressed: () => context.push('/dio'),
+              child: const Text('Dio 请求演示'),
+            ),
+            FilledButton(
+              onPressed: () => context.push('/platform'),
+              child: const Text('平台接口雏形'),
+            ),
+            FilledButton(
               onPressed: () {
                 context.push('/widgets');
               },
