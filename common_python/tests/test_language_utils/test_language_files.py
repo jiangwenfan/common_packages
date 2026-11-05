@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from common_packages.language_utils import (
+from common_python.language_utils import (
     filter_words,
     generate_file_menu,
     read_urls,
@@ -78,7 +78,7 @@ class FileTests(unittest.TestCase):
                     f"import sys; sys.path.insert(0, {str(repository)!r}); "
                     "import logging; root = logging.getLogger(); "
                     "level = root.level; handlers = root.handlers.copy(); "
-                    "import common_packages.language_utils; "
+                    "import common_python.language_utils; "
                     "assert root.level == level and root.handlers == handlers"
                 ),
             ],

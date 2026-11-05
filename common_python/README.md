@@ -1,12 +1,25 @@
-# common_packages
+# common_python
 封装了一些通用的功能
 
 **安装**
 ```bash
-pip install common_packages-0.1.0.tar.gz
+pip install common-python
 ```
 
-[**pypi首页**](https://pypi.org/project/common-packages/#description)
+**从旧包迁移**
+
+从 `1.0.0` 起，安装名改为 `common-python`，导入名改为 `common_python`。
+不再提供 `common_packages` 导入路径。调用项目需要更新依赖声明、锁文件及所有导入。
+
+```bash
+pip uninstall common-packages
+pip install common-python
+```
+
+例如，将 `from common_packages.translate import WordInfo` 改为
+`from common_python.translate import WordInfo`。
+
+[**pypi首页**](https://pypi.org/project/common-python/#description)
 
 
 > 可以 README 使用右边的目录进行快速浏览
@@ -97,8 +110,8 @@ status: bool, actual_content: bytes = tencent_cos_obj.load(file_name)
 
 ### [x] mircrosoft 翻译
 ```python
-from common_packages.translate import SentenceInfo, WordInfo
-from common_packages.translate.microsoft import TranslateMicrosoft
+from common_python.translate import SentenceInfo, WordInfo
+from common_python.translate.microsoft import TranslateMicrosoft
 
 # -------  初始化 -------
 config: dict = {
@@ -152,7 +165,7 @@ res: SentenceInfo = translate_microsoft_obj.format_sentence_response(sentence_tr
 
 ### [x] 腾讯云 TMT 文本翻译（旧接口兼容）
 
-`common_packages.translate.tencent.TencentTranslate` 保留原有文本翻译接口，
+`common_python.translate.tencent.TencentTranslate` 保留原有文本翻译接口，
 补齐单词、句子翻译及标准化结果。密钥、地域、项目 ID、超时均通过参数传入；
 导入模块时不加载 SDK，函数不打印、不写文件，SDK 异常直接向调用方传播。
 
@@ -166,7 +179,7 @@ pip install 'tencentcloud-sdk-python-common>=3.0.1042,<4'
 ```
 
 ```python
-from common_packages.translate.tencent import TencentTranslate
+from common_python.translate.tencent import TencentTranslate
 
 translator = TencentTranslate(
     secret_id="your-secret-id", secret_key="your-secret-key",
@@ -242,7 +255,7 @@ scope = "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.c
 ```
 使用:
 ```python
-from common_packages.oauth.google import GoogleOAuth2
+from common_python.oauth.google import GoogleOAuth2
 
 config = global_config["oauth2"]["google"]
 google_oauth2_obj = GoogleOAuth2(**config)
@@ -264,7 +277,7 @@ client_secret = "xxxx"
 ```
 使用:
 ```python
-from common_packages.llm.baidu_ernie import LLMBaiduErnie
+from common_python.llm.baidu_ernie import LLMBaiduErnie
 
 config = global_config["llm"]["baidu_ernie"]
 llm_baidu_ernie_obj =  LLMBaiduErnie(**config)
@@ -316,12 +329,12 @@ type分类
 
 ## 英文文本与词表处理
 
-`common_packages.language_utils` 提供文本取词、章节提取、词表过滤、词频统计、
+`common_python.language_utils` 提供文本取词、章节提取、词表过滤、词频统计、
 长度排序及网页取词，替代旧 `_other/_language_utils/language.py`。
 导入时不扫描目录、不打印、不配置全局日志；处理结果直接返回，不写文件。
 
 ```python
-from common_packages.language_utils import (
+from common_python.language_utils import (
     extract_words, get_chapter_words, word_frequencies, format_words,
     read_word_lists, filter_words, fetch_words_from_pages,
 )
@@ -371,7 +384,7 @@ chapter_words = get_chapter_words(
   默认 3 个线程、30 秒超时、最短 2 字母并去重。过滤标签及脚本、样式等内容，
   不执行 JavaScript；HTTP/网络错误直接抛出。排除词表支持一次性生成器。
 - 已清理无实现的占位函数；词表过滤和长度处理统一由上述接口提供，
-  翻译调用使用 `common_packages.translate`，不自动创建输出文件或目录。
+  翻译调用使用 `common_python.translate`，不自动创建输出文件或目录。
 
 离线测试：
 
@@ -386,7 +399,7 @@ Cookie 通过参数传入，函数不读写本地文件、不打印结果。
 请求失败时抛出异常，不返回不完整的导出结果。
 
 ```python
-from common_packages.youdao import fetch_all_wordbook_data, filter_new_words
+from common_python.youdao import fetch_all_wordbook_data, filter_new_words
 
 pages = fetch_all_wordbook_data(cookie="你的完整 Cookie 字符串")
 current_words = [
@@ -404,11 +417,11 @@ new_words = filter_new_words(existing_words=["hello", "world"], current_words=cu
 
 ## 欧路词典生词本
 
-`common_packages.eudic.EudicClient` 提供创建生词本、列出生词本、导入单词和
+`common_python.eudic.EudicClient` 提供创建生词本、列出生词本、导入单词和
 分页导出功能，替代旧 `oulu.py`。使用项目已有的 `requests` 依赖。
 
 ```python
-from common_packages.eudic import EudicClient
+from common_python.eudic import EudicClient
 
 # token 是完整 Authorization 值，按欧路提供的格式原样传入。
 with EudicClient(token="NIS your-token", language="en", timeout=30) as client:
@@ -439,7 +452,7 @@ python -m unittest discover -s tests/test_eudic -v
 
 ## 消息队列
 
-`common_packages.message_queue` 封装 Kafka 和 RabbitMQ 的同步发送、阻塞消费。
+`common_python.message_queue` 封装 Kafka 和 RabbitMQ 的同步发送、阻塞消费。
 按需安装后端依赖，导入模块不会自动连接服务器：
 
 ```bash
@@ -448,7 +461,7 @@ pip install 'pika>=1.3.2,<2'         # 使用 RabbitMQ
 ```
 
 ```python
-from common_packages.message_queue import KafkaQueue, RabbitmqQueue
+from common_python.message_queue import KafkaQueue, RabbitmqQueue
 
 with KafkaQueue(
     bootstrap_servers=["localhost:9092"], topic="events", group_id="workers"
@@ -488,7 +501,7 @@ python -m unittest discover -s tests/test_message_queue -v
 
 ## ClickHouse 和 Elasticsearch
 
-工具位于 `common_packages.db_utils`，导入时不加载对应 SDK，不依赖 Django
+工具位于 `common_python.db_utils`，导入时不加载对应 SDK，不依赖 Django
 或业务模型；连接配置通过参数传入。所有方法直接返回结果，SDK 异常向调用方传播。
 
 ```bash
@@ -499,7 +512,7 @@ pip install 'elasticsearch>=8,<9'  # 以下示例使用 Elasticsearch 8.x 客户
 Elasticsearch 客户端主版本应与服务端匹配，参见[官方兼容性说明](https://www.elastic.co/docs/reference/elasticsearch/clients/python#compatibility)。
 
 ```python
-from common_packages.db_utils import ClickhouseOperator, ElasticsearchHandle
+from common_python.db_utils import ClickhouseOperator, ElasticsearchHandle
 
 # ClickHouse 原生 TCP 端口为 9000，支持 secure、connect_timeout 等驱动参数。
 with ClickhouseOperator(host="localhost", port=9000, database="analytics") as ck:
@@ -543,12 +556,12 @@ python -m unittest discover -s tests/test_db_utils -v
 
 ## 视频合并
 
-`common_packages.video` 使用本机 FFmpeg/ffprobe，提供视频探测和不重新编码的
+`common_python.video` 使用本机 FFmpeg/ffprobe，提供视频探测和不重新编码的
 合并功能，替代旧 `_merge_video.py`，无需额外 Python 依赖。
 调用前需安装 FFmpeg，并确保 `ffmpeg`、`ffprobe` 位于 PATH，或通过参数传入完整路径。
 
 ```python
-from common_packages.video import merge_videos, merge_directory, probe_video
+from common_python.video import merge_videos, merge_directory, probe_video
 
 # 输入顺序就是合并顺序。输出父目录必须已存在，返回输出的绝对 Path。
 output = merge_videos(
@@ -589,7 +602,7 @@ python -m unittest discover -s tests/test_video -v
 
 ## GitHub Webhook
 
-`common_packages.github` 替代旧 `_github_hooks.py`，密钥通过参数传入，
+`common_python.github` 替代旧 `_github_hooks.py`，密钥通过参数传入，
 不创建全局应用、不启动服务器、不打印签名或密钥、不配置全局日志。
 验签使用标准库，不需要 Flask；可选 HTTP 接入才需要安装：
 
@@ -599,7 +612,7 @@ pip install 'Flask>=3,<4'
 
 ```python
 import os
-from common_packages.github import create_webhook_app, verify_signature
+from common_python.github import create_webhook_app, verify_signature
 
 secret = os.environ["GITHUB_WEBHOOK_SECRET"]
 # 返回 Flask 应用对象，由调用方自行部署或启动。

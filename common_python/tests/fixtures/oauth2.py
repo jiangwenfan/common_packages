@@ -1,6 +1,6 @@
 import pytest
 
-from common_packages.oauth2.google import Oauth2Google
+from common_python.oauth2.google import Oauth2Google
 
 
 @pytest.fixture(scope="class")

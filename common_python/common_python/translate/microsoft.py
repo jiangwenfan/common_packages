@@ -2,8 +2,8 @@ import uuid
 
 import requests
 
-from common_packages.translate import LanguageCodeOfBackend, SentenceInfo, WordInfo
-from common_packages.tts.microsoft import TTSMicrosoft
+from common_python.translate import LanguageCodeOfBackend, SentenceInfo, WordInfo
+from common_python.tts.microsoft import TTSMicrosoft
 
 pos_tag_table = {
     "ADJ": ("Adjectives", "形容词"),

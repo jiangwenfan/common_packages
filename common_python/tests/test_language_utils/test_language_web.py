@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 import requests
 
-from common_packages.language_utils import fetch_words_from_pages
+from common_python.language_utils import fetch_words_from_pages
 
 
 def response(text, status=200):
@@ -17,7 +17,7 @@ def response(text, status=200):
 
 
 class WebTests(unittest.TestCase):
-    @patch("common_packages.language_utils.web.requests.get")
+    @patch("common_python.language_utils.web.requests.get")
     def test_extracts_html_text_and_ignores_scripts_styles_and_comments(self, get):
         get.return_value = response(
             "<style>BadCss</style><script>BadScript()</script>"
@@ -30,7 +30,7 @@ class WebTests(unittest.TestCase):
         )
         get.assert_called_once_with("https://example.com", timeout=30)
 
-    @patch("common_packages.language_utils.web.requests.get")
+    @patch("common_python.language_utils.web.requests.get")
     def test_waits_for_workers_and_returns_results_in_input_order(self, get):
         second_started = threading.Event()
 
@@ -49,7 +49,7 @@ class WebTests(unittest.TestCase):
         self.assertEqual(result[urls[0]], ["first", "page"])
         self.assertEqual(result[urls[1]], ["second", "page"])
 
-    @patch("common_packages.language_utils.web.requests.get")
+    @patch("common_python.language_utils.web.requests.get")
     def test_generator_exclusions_are_shared_by_all_pages_without_consumption(
         self, get
     ):
@@ -65,13 +65,13 @@ class WebTests(unittest.TestCase):
         )
         self.assertEqual(get.call_count, 2)
 
-    @patch("common_packages.language_utils.web.requests.get")
+    @patch("common_python.language_utils.web.requests.get")
     def test_http_errors_propagate_instead_of_silent_empty_results(self, get):
         get.return_value = response("failed", 503)
         with self.assertRaises(requests.HTTPError):
             fetch_words_from_pages(["https://example.com/fail"])
 
-    @patch("common_packages.language_utils.web.requests.get")
+    @patch("common_python.language_utils.web.requests.get")
     def test_network_error_propagates(self, get):
         error = requests.Timeout("offline error")
         get.side_effect = error
@@ -79,7 +79,7 @@ class WebTests(unittest.TestCase):
             fetch_words_from_pages(["https://example.com"])
         self.assertIs(caught.exception, error)
 
-    @patch("common_packages.language_utils.web.requests.get")
+    @patch("common_python.language_utils.web.requests.get")
     def test_invalid_arguments_fail_before_network_access(self, get):
         for options in (
             {"max_workers": 0},

@@ -1,6 +1,6 @@
 import unittest
 
-from common_packages.language_utils import (
+from common_python.language_utils import (
     extract_chapter,
     extract_words,
     filter_words,

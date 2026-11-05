@@ -1,4 +1,4 @@
-from common_packages.translate import SentenceInfo, WordInfo
+from common_python.translate import SentenceInfo, WordInfo
 
 
 class TestMicrosoft:

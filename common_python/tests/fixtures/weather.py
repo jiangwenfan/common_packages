@@ -1,7 +1,7 @@
 import pytest
 
-from common_packages.weather.amap import WeatherAmap
-from common_packages.weather.wanwei import WeatherWanwei
+from common_python.weather.amap import WeatherAmap
+from common_python.weather.wanwei import WeatherWanwei
 
 
 @pytest.fixture(scope="class")

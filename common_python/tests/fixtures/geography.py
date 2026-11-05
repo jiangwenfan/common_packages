@@ -1,7 +1,7 @@
 import pytest
 
-from common_packages.geography.district_amap import ChinaDistrictAmap
-from common_packages.geography.search_amap import SearchLocationAmap
+from common_python.geography.district_amap import ChinaDistrictAmap
+from common_python.geography.search_amap import SearchLocationAmap
 
 
 @pytest.fixture(scope="class")

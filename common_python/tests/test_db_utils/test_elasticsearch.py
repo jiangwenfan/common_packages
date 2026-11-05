@@ -9,7 +9,7 @@ from elastic_transport import ApiResponseMeta, HttpHeaders, NodeConfig
 from elasticsearch import ConflictError
 from elasticsearch.helpers import BulkIndexError
 
-from common_packages.db_utils import ElasticsearchHandle
+from common_python.db_utils import ElasticsearchHandle
 
 
 def response(body, status=200):
@@ -190,7 +190,7 @@ class DependencyTests(unittest.TestCase):
                     "import sys; "
                     "sys.modules.update(dict.fromkeys(['elasticsearch', 'clickhouse_driver', "
                     "'numpy', 'pandas', 'django', 'article', 'sqlalchemy', 'pymysql'])); "
-                    "from common_packages.db_utils import ClickhouseOperator, ElasticsearchHandle"
+                    "from common_python.db_utils import ClickhouseOperator, ElasticsearchHandle"
                 ),
             ],
             capture_output=True,
@@ -203,7 +203,7 @@ class DependencyTests(unittest.TestCase):
         with patch.dict(
             sys.modules, {"clickhouse_driver": None, "elasticsearch": None}
         ):
-            from common_packages.db_utils import ClickhouseOperator
+            from common_python.db_utils import ClickhouseOperator
 
             with self.assertRaisesRegex(ImportError, "pip install clickhouse-driver"):
                 ClickhouseOperator("localhost")

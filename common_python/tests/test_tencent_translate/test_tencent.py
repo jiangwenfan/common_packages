@@ -14,8 +14,8 @@ from tencentcloud.common.exception.tencent_cloud_sdk_exception import (
     TencentCloudSDKException,
 )
 
-from common_packages.translate import Translate
-from common_packages.translate.tencent import TencentTranslate
+from common_python.translate import Translate
+from common_python.translate.tencent import TencentTranslate
 
 
 RESPONSE = {
@@ -205,7 +205,7 @@ class DependencyTests(unittest.TestCase):
                 "-c",
                 (
                     "import sys; sys.modules['tencentcloud'] = None; "
-                    "from common_packages.translate.tencent import TencentTranslate; "
+                    "from common_python.translate.tencent import TencentTranslate; "
                     "assert TencentTranslate.format_sentence_response("
                     "{'sentence': 'hello', 'TargetText': '你好'})['translations'] == ['你好']"
                 ),

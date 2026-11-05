@@ -1,8 +1,5 @@
 import importlib
 
-# TODO: common_packages --> common_utils
-
-
 class CommonPackageManager:
     """公共包管理器"""
 

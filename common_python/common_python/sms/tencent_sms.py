@@ -9,7 +9,7 @@ from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.sms.v20210111 import models, sms_client
 from tencentcloud.sms.v20210111.models import SendSmsResponse, SendStatus
 
-from common_packages.sms.interface import SendSms
+from common_python.sms.interface import SendSms
 
 
 class TencentSendSms(SendSms):

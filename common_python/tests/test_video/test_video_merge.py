@@ -10,8 +10,8 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from common_packages.video import merge_directory, merge_videos, probe_video
-from common_packages.video.merge import _publish
+from common_python.video import merge_directory, merge_videos, probe_video
+from common_python.video.merge import _publish
 
 
 FFMPEG = shutil.which("ffmpeg")
@@ -28,7 +28,7 @@ class ValidationTests(unittest.TestCase):
         self.output = self.root / "output.mp4"
 
     def test_invalid_paths_and_configuration_do_not_launch_processes(self):
-        with patch("common_packages.video.merge.subprocess.run") as run:
+        with patch("common_python.video.merge.subprocess.run") as run:
             for inputs, output, error in (
                 ([], self.output, ValueError),
                 (self.source, self.output, TypeError),
@@ -70,7 +70,7 @@ class ValidationTests(unittest.TestCase):
         self.assertEqual(self.source.read_bytes(), b"source")
 
     def test_missing_ffmpeg_reports_installation_problem(self):
-        with patch("common_packages.video.merge.shutil.which", return_value=None):
+        with patch("common_python.video.merge.shutil.which", return_value=None):
             with self.assertRaisesRegex(FileNotFoundError, "FFmpeg"):
                 merge_videos([self.source], self.output)
 
@@ -81,8 +81,8 @@ class ValidationTests(unittest.TestCase):
             "extra": "kept",
         }
         with patch(
-            "common_packages.video.merge.shutil.which", return_value="/fake/ffprobe"
-        ), patch("common_packages.video.merge.subprocess.run") as run:
+            "common_python.video.merge.shutil.which", return_value="/fake/ffprobe"
+        ), patch("common_python.video.merge.subprocess.run") as run:
             run.return_value = subprocess.CompletedProcess(
                 [], 0, json.dumps(metadata), ""
             )
@@ -101,7 +101,7 @@ class ValidationTests(unittest.TestCase):
 
     def test_publish_falls_back_when_hardlinks_are_not_supported(self):
         with patch(
-            "common_packages.video.merge.os.link",
+            "common_python.video.merge.os.link",
             side_effect=OSError(errno.ENOTSUP, "unsupported"),
         ):
             _publish(self.source, self.output, False)
@@ -110,10 +110,10 @@ class ValidationTests(unittest.TestCase):
 
     def test_failed_publish_copy_removes_only_its_own_incomplete_output(self):
         with patch(
-            "common_packages.video.merge.os.link",
+            "common_python.video.merge.os.link",
             side_effect=OSError(errno.ENOTSUP, "unsupported"),
         ), patch(
-            "common_packages.video.merge.shutil.copyfileobj",
+            "common_python.video.merge.shutil.copyfileobj",
             side_effect=OSError("disk full"),
         ):
             with self.assertRaisesRegex(OSError, "disk full"):
@@ -131,8 +131,8 @@ class ValidationTests(unittest.TestCase):
 
     def test_zero_exit_code_with_error_log_is_not_reported_as_success(self):
         with patch(
-            "common_packages.video.merge.shutil.which", return_value="/fake/ffprobe"
-        ), patch("common_packages.video.merge.subprocess.run") as run:
+            "common_python.video.merge.shutil.which", return_value="/fake/ffprobe"
+        ), patch("common_python.video.merge.subprocess.run") as run:
             run.return_value = subprocess.CompletedProcess(
                 [],
                 0,

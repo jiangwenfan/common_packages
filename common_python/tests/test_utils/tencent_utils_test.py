@@ -1,6 +1,6 @@
 import requests
 from .. import get_config
-from common_packages.utils.tencent_utils import generate_tencent_key
+from common_python.utils.tencent_utils import generate_tencent_key
 
 
 def test_generate_tencent_key():

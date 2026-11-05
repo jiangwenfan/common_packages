@@ -1,59 +1,54 @@
-name: build and upload package to pypi
+name: Build and publish common-python to PyPI
 
 on:
   push:
     paths:
-      - "common_packages/**"
-      - "pyproject.toml"
-  workflow_dispatch: # 添加手动触发器
+      - "common_python/**"
+      - ".github/workflows/python_build_publish.yaml"
+  workflow_dispatch:
     inputs:
-      custom_version: # 可选，允许用户输入自定义版本号
-        description: "Custom version for the build"
+      custom_version:
+        description: "Optional version override; defaults to pyproject.toml"
         required: false
+        type: string
         default: ""
 
-# TODO 增加自定义构建版本
+permissions:
+  contents: read
 
 jobs:
   deploy:
-    name: build package
+    name: Build and publish package
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: common_python
 
     steps:
-      - name: pull code
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v7
 
       - name: Set up Python 3.11
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v7
         with:
-          python-version: 3.11.2
+          python-version: "3.11"
 
-      - name: Install system dependencies
-        run: sudo apt-get update && sudo apt-get install -y libffi-dev
+      - name: Install Poetry
+        run: python -m pip install --disable-pip-version-check poetry
 
-      - name: Install poetry
-        run: |
-          pip install poetry && poetry config virtualenvs.create false
+      - name: Set custom version
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.custom_version != '' }}
+        env:
+          CUSTOM_VERSION: ${{ inputs.custom_version }}
+        run: poetry version "$CUSTOM_VERSION"
 
-      - name: Install Dependencies
-        run: poetry install
+      - name: Validate package configuration
+        run: poetry check
 
-      # - name: build package
-      #   run: python -m build
-      # - name: build package with Poetry
-      #   run: poetry build
-
-      # - name: create pypi config
-      #   run: |
-      #     echo "[pypi]" > ~/.pypirc
-      #     echo "username = __token__" >> ~/.pypirc
-      #     echo "password = ${{ secrets.PYPI_TOKEN}}" >> ~/.pypirc
-
-      # - name: upload package
-      #   run: cat ~/.pypirc && twine upload  dist/*
-
-      - name: Configure PyPI token
-        run: poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
+      - name: Build package
+        run: poetry build --no-interaction
 
       - name: Publish to PyPI
-        run: poetry publish --build
+        env:
+          POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
+        run: poetry publish --no-interaction

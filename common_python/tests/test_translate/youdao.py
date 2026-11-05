@@ -5,7 +5,7 @@ sys.path.append("..")
 import json
 import logging
 
-from common_packages.translate._youdao import YoudaoTranslate
+from common_python.translate._youdao import YoudaoTranslate
 
 from .. import get_config
 
