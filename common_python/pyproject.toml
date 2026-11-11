@@ -1,7 +1,7 @@
 [project]
 name = "jwf-common-python"
 # pip 打包的版本号，每次发布时更新。
-version = "1.0.1"
+version = "1.0.2"
 description = "封装了一些常用功能,GitHub: https://github.com/jiangwenfan/common_packages/tree/main"
 authors = [{ name = "evans.jiang", email = "evans.jiang@gmail.com" }]
 license = "MIT"
