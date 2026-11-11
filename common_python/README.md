@@ -211,18 +211,115 @@ python -m unittest discover -s tests/test_tencent_translate -v
 ## 4. tts接口
 > 封装文本转语音接口
 
-### [x] mircrosoft 文本转语音
-依赖:
-- import requests
+### [x] Azure（Microsoft）文本转语音
+
 ```python
-tts_config = {
-   key: "xx",
-   location_region: "xx",
-   language: "en|zh"
-}
-tts = TTSMicrosoft(tts_config)
-audio: bytes = tts.convert_text_to_speech("hello 123")
+from jwf_common_python.tts.azure import TTSMicrosoft
+
+tts = TTSMicrosoft(key="your-key", location_region="eastasia", language="zh")
+audio: bytes = tts.convert_text_to_speech("你好")
 ```
+
+使用 `requests`，返回 24 kHz WAV 音频。`language="zh"` 使用云健，
+`language="en"`（客户端默认值）使用 Andrew Multilingual。网络超时默认 30 秒，
+认证或合成失败时抛出异常，不打印令牌或音频数据。
+
+本地真实测试：将 `.env.example` 复制为根目录 `.env`，填写 `AZURE_SPEECH_KEY`
+和资源所在区域 `AZURE_SPEECH_REGION`，例如 `eastasia`。可选配置
+`AZURE_TTS_LANGUAGE`（手动测试默认 `zh`）和 `AZURE_TTS_TEXT`。
+然后在仓库根目录运行：
+
+```bash
+python -m pip install pytest requests python-dotenv
+python -m pytest --noconftest tests/test_tts/test_azure_manual.py -m manual -s
+```
+
+测试会真实获取令牌并合成一次，保存 `test_temp_data/azure_tts.wav`，
+可直接打开试听；重复运行覆盖该测试音频。普通 pytest 默认跳过真实调用。
+`--noconftest` 可跳过其他服务的公共 fixture，无需安装 Docker 或数据库依赖。
+
+离线测试（mock HTTP）：
+
+```bash
+python -m pytest --noconftest tests/test_tts/microsoft_test.py tests/test_tts/test_azure_local_config.py
+```
+
+### [x] 统一音色目录
+
+```python
+from jwf_common_python.tts import TTSVoiceCatalog
+
+voices = TTSVoiceCatalog.get_voices()
+```
+
+目前聚合腾讯云本地维护的音色，无需密钥、SDK 或网络请求。
+返回列表中每项的顶层固定包含 `name`、`voice_id`、`description`、`gender`、
+`supplier`、`category` 和 `other`。六个公共字段保留供应商原始值与类型，
+语言、采样率、情感等其他字段自动归入 `other` 字典；无额外字段时为 `{}`。
+保持供应商返回顺序，每次返回独立副本，不影响供应商原始接口及其完整数据。
+
+离线单元测试：
+
+```bash
+python -m pytest --noconftest tests/test_tts/test_voice_catalog.py
+```
+
+### [x] 腾讯云 TextToVoice 语音合成
+
+依据 Apifox 项目 `8929040` 的接口 `524819309` 实现，使用腾讯云公共 SDK
+处理 TC3 签名，无需安装 TTS 产品 SDK：
+
+```bash
+pip install 'tencentcloud-sdk-python-common>=3.0.1042,<4'
+```
+
+```python
+from jwf_common_python.tts.tencent import TTSTencent
+
+voices = TTSTencent.get_voices()  # 返回 tts.py 中的本地音色数据，无需密钥
+
+with TTSTencent(secret_id="your-secret-id", secret_key="your-secret-key") as tts:
+    response = tts.text_to_voice("你好", voice_type=1001)
+    subtitles = response["Subtitles"]
+    request_id = response["RequestId"]
+```
+
+- 语音合成只提供 `text_to_voice`，返回完整 `Response` 字典，
+  保留 Base64 `Audio`、字幕和请求标识；音频由调用方按需解码。
+- `get_voices()` 返回本地维护的音色列表，包含音色 ID、语言、采样率、情感等
+  原始字段。返回副本，修改结果不会影响后续调用；不连接腾讯云获取音色。
+- 使用长期 SecretId/SecretKey，不发送 Token。可配置 `region`（默认留空）和
+  `timeout`（默认 30 秒）；未传 `session_id` 时，每次请求自动生成 UUID。
+- 默认开启字幕、WAV 格式、正常语速和音量（`speed=0`、`volume=0`），
+  模型 1、中文、16000 Hz。文本和音色 `voice_type` 必须传入，按需覆盖可选业务字段：
+  `volume`、`speed`、`project_id`、`model_type`、`fast_voice_type`、
+  `primary_language`、`sample_rate`、`codec`、`enable_subtitle`、`segment_rate`、
+  `emotion_category`、`emotion_intensity`。复刻音色 200000000 必须提供 `fast_voice_type`。
+- 文本长度、SSML、音色与语言/采样率/字幕/情感的兼容性由服务端判定，
+  不自动拆分长文本。HTTP 200 中的业务错误也会抛出 SDK 异常，保留错误码和请求 ID。
+  不打印或自动保存音频；使用 `with` 或 `close()` 释放连接。
+
+离线单元测试（mock HTTP，不需要真实密钥）：
+
+```bash
+python -m pytest tests/test_tts/test_tencent_tts.py tests/test_tts/test_tencent_params.py
+```
+
+本地真实测试：安装测试依赖，将根目录 `.env.example` 复制为 `.env`，
+填写 `TENCENTCLOUD_SECRET_ID`、`TENCENTCLOUD_SECRET_KEY` 和必填音色
+`TENCENT_TTS_VOICE_TYPE`，可修改 `TENCENT_TTS_TEXT` 指定测试文本。
+`.env` 已被 Git 忽略。然后在仓库根目录执行：
+
+```bash
+python -m pip install pytest python-dotenv 'tencentcloud-sdk-python-common>=3.0.1042,<4'
+python -m pytest --noconftest tests/test_tts/test_tencent_manual.py -m manual -s
+```
+
+这会真实调用一次腾讯云，保存 `test_temp_data/tencent_tts.wav` 和
+`test_temp_data/tencent_tts_response.json`，重复运行会覆盖这两个测试文件。
+可直接打开 WAV 试听，JSON 中保留音频、字幕和请求 ID。
+`--noconftest` 跳过其他服务的公共 fixture，无需安装 MySQL、Docker 等依赖。
+普通 pytest 默认排除 `manual`；只有显式指定 `-m manual` 才运行该测试。
 
 ## 5. Ai接口
 > 解释句子,分析长难句

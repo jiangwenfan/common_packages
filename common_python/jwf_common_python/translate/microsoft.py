@@ -2,8 +2,8 @@ import uuid
 
 import requests
 
+from jwf_common_python.tts.azure import TTSMicrosoft
 from jwf_common_python.translate import LanguageCodeOfBackend, SentenceInfo, WordInfo
-from jwf_common_python.tts.microsoft import TTSMicrosoft
 
 pos_tag_table = {
     "ADJ": ("Adjectives", "形容词"),
@@ -356,12 +356,12 @@ class TranslateMicrosoft:
 
         # 获取示例响应
         sample_response: dict = response[0]
-        assert (
-            sample_response["normalizedSource"] == normalized_word
-        ), f"microsoft词典示例响应格式错误: {sample_response}"
-        assert (
-            sample_response["normalizedTarget"] == normalized_translation
-        ), f"microsoft词典示例响应格式错误: {sample_response}"
+        assert sample_response["normalizedSource"] == normalized_word, (
+            f"microsoft词典示例响应格式错误: {sample_response}"
+        )
+        assert sample_response["normalizedTarget"] == normalized_translation, (
+            f"microsoft词典示例响应格式错误: {sample_response}"
+        )
 
         # 获取示例结果
         examples: list[dict] = sample_response["examples"]
@@ -607,9 +607,9 @@ class TranslateMicrosoft:
 
         # 解析1
         response_dict: dict = response[0]
-        assert (
-            "translations" in response_dict
-        ), f"microsoft翻译响应格式错误2: {response_dict}"
+        assert "translations" in response_dict, (
+            f"microsoft翻译响应格式错误2: {response_dict}"
+        )
         _ = {
             "translations": [
                 {

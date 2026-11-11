@@ -1,6 +1,6 @@
 import pytest
 
-from jwf_common_python.tts.microsoft import TTSMicrosoft
+from jwf_common_python.tts.azure import TTSMicrosoft
 
 
 @pytest.fixture(scope="class")
