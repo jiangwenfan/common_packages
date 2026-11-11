@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "jwf-common-python"
 # pip打包的版本号,每次都需要更新
-version = "1.0.0"
+version = "1.0.1"
 description = "封装了一些常用功能,GitHub: https://github.com/jiangwenfan/common_packages/tree/main"
 authors = ["evans.jiang <evans.jiang@gmail.com>"]
 license = "MIT"
@@ -12,6 +12,8 @@ packages = [{ include = "jwf_common_python" }]
 [tool.poetry.dependencies]
 python = "^3.11"
 requests = "^2.31.0"
+# 上游字幕客户端的 Python 版本上限仅约束 youtube extra。
+youtube-transcript-api = { version = ">=1.2.4,<2", python = ">=3.11,<3.16", optional = true }
 # 使用时,安需要安装
 # pika = "^1.3.2"
 # tencentcloud-sdk-python-tmt = "^3.0.1042"
@@ -28,6 +30,9 @@ requests = "^2.31.0"
 # srt = "^3.5.3"
 # tencentcloud-sdk-python-common = "^3.0.1372"
 
+
+[tool.poetry.extras]
+youtube = ["youtube-transcript-api"]
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.2"
