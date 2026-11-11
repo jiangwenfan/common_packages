@@ -3,8 +3,8 @@ from collections.abc import ByteString
 
 import requests
 
-from common_python.file_storage.file_interface import Storage
-from common_python.utils.tencent_utils import generate_tencent_key
+from jwf_common_python.file_storage.file_interface import Storage
+from jwf_common_python.utils.tencent_utils import generate_tencent_key
 
 # TODO sdk方式封装
 # TODO 判断文件是否存在

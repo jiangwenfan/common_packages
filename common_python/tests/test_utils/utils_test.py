@@ -1,4 +1,4 @@
-from common_python.utils.utils import calculate_relative_value
+from jwf_common_python.utils.utils import calculate_relative_value
 
 from .. import get_config
 
@@ -16,7 +16,7 @@ test_calculate_relative_value()
 import sys
 
 sys.path.append("..")
-from common_python.email import SendEmail
+from jwf_common_python.email import SendEmail
 
 from .. import get_config
 

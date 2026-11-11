@@ -9,7 +9,7 @@ import unittest
 from contextlib import redirect_stdout
 from unittest.mock import Mock, patch
 
-from common_python.github import create_webhook_app, verify_signature
+from jwf_common_python.github import create_webhook_app, verify_signature
 
 
 def signature(payload, secret="test-secret"):
@@ -151,7 +151,7 @@ class DependencyTests(unittest.TestCase):
                 "-c",
                 (
                     "import sys; sys.modules['flask'] = None; "
-                    "from common_python.github import verify_signature; "
+                    "from jwf_common_python.github import verify_signature; "
                     "assert verify_signature(b'body', 'secret', None) is False"
                 ),
             ],

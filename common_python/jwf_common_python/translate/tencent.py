@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from common_python.translate import SentenceInfo, Translate, WordInfo
+from jwf_common_python.translate import SentenceInfo, Translate, WordInfo
 
 SDK_REQUIREMENT = "tencentcloud-sdk-python-common>=3.0.1042,<4"
 

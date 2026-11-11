@@ -1,7 +1,7 @@
 import os
 from collections.abc import ByteString
 
-from common_python.file_storage.file_interface import Storage
+from jwf_common_python.file_storage.file_interface import Storage
 
 
 class LocalStorage(Storage):

@@ -4,7 +4,7 @@ import time
 import pymysql
 import pytest
 
-from common_python.db_utils.mysql import MysqlOperator
+from jwf_common_python.db_utils.mysql import MysqlOperator
 from tests.fixtures.utils import parse_container_status
 
 

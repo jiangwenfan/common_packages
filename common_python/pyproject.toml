@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "common-python"
+name = "jwf-common-python"
 # pip打包的版本号,每次都需要更新
 version = "1.0.0"
 description = "封装了一些常用功能,GitHub: https://github.com/jiangwenfan/common_packages/tree/main"
@@ -7,7 +7,7 @@ authors = ["evans.jiang <evans.jiang@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 # 自动打包子目录
-packages = [{ include = "common_python" }]
+packages = [{ include = "jwf_common_python" }]
 
 [tool.poetry.dependencies]
 python = "^3.11"

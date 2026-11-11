@@ -5,12 +5,12 @@ from unittest.mock import Mock, patch
 
 import requests
 
-from common_python.youdao import (
+from jwf_common_python.youdao import (
     fetch_all_wordbook_data,
     fetch_wordbook_data,
     filter_new_words,
 )
-from common_python.youdao.wordbook import WORDBOOK_URL
+from jwf_common_python.youdao.wordbook import WORDBOOK_URL
 
 
 def make_page(total, *words):
@@ -26,7 +26,7 @@ def make_page(total, *words):
 
 
 class WordbookTests(unittest.TestCase):
-    @patch("common_python.youdao.wordbook.requests.get")
+    @patch("jwf_common_python.youdao.wordbook.requests.get")
     def test_single_page_preserves_response_and_passes_cookie(self, get):
         page = make_page(1, "hello")
         get.return_value.json.return_value = page
@@ -41,7 +41,7 @@ class WordbookTests(unittest.TestCase):
             timeout=5,
         )
 
-    @patch("common_python.youdao.wordbook.requests.get")
+    @patch("jwf_common_python.youdao.wordbook.requests.get")
     def test_exports_all_pages_without_losing_fields(self, get):
         pages = [make_page(3, "one", "two"), make_page(3, "three")]
         get.side_effect = [Mock(json=Mock(return_value=page)) for page in pages]
@@ -52,7 +52,7 @@ class WordbookTests(unittest.TestCase):
             [{"limit": 2, "offset": 0}, {"limit": 2, "offset": 2}],
         )
 
-    @patch("common_python.youdao.wordbook.requests.get")
+    @patch("jwf_common_python.youdao.wordbook.requests.get")
     def test_stops_at_total_when_last_page_is_full(self, get):
         page = make_page(2, "one", "two")
         get.return_value.json.return_value = page
@@ -60,7 +60,7 @@ class WordbookTests(unittest.TestCase):
         self.assertEqual(fetch_all_wordbook_data("session=example", limit=2), [page])
         get.assert_called_once()
 
-    @patch("common_python.youdao.wordbook.requests.get")
+    @patch("jwf_common_python.youdao.wordbook.requests.get")
     def test_empty_wordbook_preserves_response(self, get):
         page = make_page(0)
         get.return_value.json.return_value = page
@@ -68,7 +68,7 @@ class WordbookTests(unittest.TestCase):
         self.assertEqual(fetch_all_wordbook_data("session=example"), [page])
         get.assert_called_once()
 
-    @patch("common_python.youdao.wordbook.requests.get")
+    @patch("jwf_common_python.youdao.wordbook.requests.get")
     def test_server_page_cap_does_not_skip_words(self, get):
         pages = [make_page(2, "one"), make_page(2, "two")]
         get.side_effect = [Mock(json=Mock(return_value=page)) for page in pages]
@@ -76,13 +76,13 @@ class WordbookTests(unittest.TestCase):
         self.assertEqual(fetch_all_wordbook_data("session=example"), pages)
         self.assertEqual(get.call_args.kwargs["params"]["offset"], 1)
 
-    @patch("common_python.youdao.wordbook.requests.get")
+    @patch("jwf_common_python.youdao.wordbook.requests.get")
     def test_api_failure_raises(self, get):
         get.return_value.json.return_value = {"msg": "NOT_LOGIN"}
         with self.assertRaises(ValueError):
             fetch_all_wordbook_data("session=example")
 
-    @patch("common_python.youdao.wordbook.requests.get")
+    @patch("jwf_common_python.youdao.wordbook.requests.get")
     def test_later_http_failure_does_not_return_partial_export(self, get):
         first = Mock(json=Mock(return_value=make_page(2, "one")))
         second = Mock()
@@ -92,20 +92,20 @@ class WordbookTests(unittest.TestCase):
         with self.assertRaises(requests.HTTPError):
             fetch_all_wordbook_data("session=example", limit=1)
 
-    @patch("common_python.youdao.wordbook.requests.get")
+    @patch("jwf_common_python.youdao.wordbook.requests.get")
     def test_timeout_propagates(self, get):
         get.side_effect = requests.Timeout()
         with self.assertRaises(requests.Timeout):
             fetch_all_wordbook_data("session=example")
 
-    @patch("common_python.youdao.wordbook.requests.get")
+    @patch("jwf_common_python.youdao.wordbook.requests.get")
     def test_unexpected_empty_page_does_not_return_partial_export(self, get):
         pages = [make_page(2, "one"), make_page(2)]
         get.side_effect = [Mock(json=Mock(return_value=page)) for page in pages]
         with self.assertRaises(ValueError):
             fetch_all_wordbook_data("session=example", limit=1)
 
-    @patch("common_python.youdao.wordbook.requests.get")
+    @patch("jwf_common_python.youdao.wordbook.requests.get")
     def test_invalid_arguments_do_not_send_requests(self, get):
         for kwargs in ({"cookie": " "}, {"limit": 0}, {"offset": -1}):
             arguments = {"cookie": "session=example", **kwargs}
@@ -113,7 +113,7 @@ class WordbookTests(unittest.TestCase):
                 fetch_wordbook_data(**arguments)
         get.assert_not_called()
 
-    @patch("common_python.youdao.wordbook.requests.get")
+    @patch("jwf_common_python.youdao.wordbook.requests.get")
     def test_invalid_page_raises(self, get):
         for data in (None, {"total": 1}, {"total": -1, "itemList": []}):
             get.return_value.json.return_value = {"msg": "SUCCESS", "data": data}

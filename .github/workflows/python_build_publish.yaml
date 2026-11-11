@@ -1,4 +1,4 @@
-name: Build and publish common-python to PyPI
+name: Build and publish jwf-common-python to PyPI
 
 on:
   push:

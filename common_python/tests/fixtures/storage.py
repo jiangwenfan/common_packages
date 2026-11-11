@@ -1,6 +1,6 @@
 import pytest
 
-from common_python.file_storage import LocalStorage, TencentCos
+from jwf_common_python.file_storage import LocalStorage, TencentCos
 
 
 @pytest.fixture(scope="class")

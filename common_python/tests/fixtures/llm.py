@@ -1,6 +1,6 @@
 import pytest
 
-from common_python.llm.baidu_ernie import LLMBaiduErnie
+from jwf_common_python.llm.baidu_ernie import LLMBaiduErnie
 
 
 @pytest.fixture(scope="class")

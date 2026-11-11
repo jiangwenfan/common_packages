@@ -11,7 +11,7 @@ except ImportError:
     raise ImportError("Couldn't import requests. pip install --upgrade requests")
 from requests.models import Response
 
-from common_python.translate import SentenceInfo, Translate, WordInfo
+from jwf_common_python.translate import SentenceInfo, Translate, WordInfo
 
 LanguageCodeOfYoudao = Literal["zh-CHS", "zh-CHT", "en", "fr", "ja", "de", "es", "ko"]
 LanguageCodeOfBackend = Literal["zh-CN", "zh-TW", "en", "fr", "ja", "de", "es", "ko"]

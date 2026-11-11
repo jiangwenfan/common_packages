@@ -8,7 +8,7 @@ from urllib.parse import parse_qs, urlparse
 
 import requests
 
-from common_python.eudic import EudicClient
+from jwf_common_python.eudic import EudicClient
 
 
 def response(body, status=200):
@@ -219,7 +219,7 @@ class EudicTests(unittest.TestCase):
         self.send.assert_not_called()
 
     def test_invalid_configuration_does_not_create_sessions(self):
-        with patch("common_python.eudic.wordbook.requests.Session") as session:
+        with patch("jwf_common_python.eudic.wordbook.requests.Session") as session:
             for config in (
                 {"token": ""},
                 {"language": "zh"},

@@ -2,9 +2,9 @@ import json
 
 import pytest
 
-from common_python.translate.microsoft import TranslateMicrosoft
+from jwf_common_python.translate.microsoft import TranslateMicrosoft
 
-# from common_python.translate.youdao import YoudaoTranslate
+# from jwf_common_python.translate.youdao import YoudaoTranslate
 
 # @pytest.fixture(scope="class")
 # def youdao_op(global_config):

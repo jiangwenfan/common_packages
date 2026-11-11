@@ -1,4 +1,4 @@
-from common_python.translate import SentenceInfo, WordInfo
+from jwf_common_python.translate import SentenceInfo, WordInfo
 
 
 class TestMicrosoft:

@@ -9,7 +9,7 @@ import clickhouse_driver
 import pandas as pd
 from pandas.testing import assert_frame_equal
 
-from common_python.db_utils import ClickhouseOperator
+from jwf_common_python.db_utils import ClickhouseOperator
 
 
 class ClickhouseTests(unittest.TestCase):
@@ -105,7 +105,7 @@ class ClickhouseTests(unittest.TestCase):
                 "-c",
                 (
                     "import sys; sys.modules['pandas'] = None; sys.modules['numpy'] = None; "
-                    "from common_python.db_utils import ClickhouseOperator; "
+                    "from jwf_common_python.db_utils import ClickhouseOperator; "
                     "op = ClickhouseOperator('localhost', settings={'use_numpy': False}); "
                     "op.close()"
                 ),

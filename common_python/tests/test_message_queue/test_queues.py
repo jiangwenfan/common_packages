@@ -13,7 +13,7 @@ import pika
 from kafka.errors import KafkaTimeoutError
 from kafka.structs import TopicPartition
 
-from common_python.message_queue import KafkaQueue, RabbitmqQueue
+from jwf_common_python.message_queue import KafkaQueue, RabbitmqQueue
 
 
 class DependencyTests(unittest.TestCase):
@@ -24,7 +24,7 @@ class DependencyTests(unittest.TestCase):
                 "-c",
                 (
                     "import sys; sys.modules['kafka'] = None; sys.modules['pika'] = None; "
-                    "from common_python.message_queue import KafkaQueue, RabbitmqQueue"
+                    "from jwf_common_python.message_queue import KafkaQueue, RabbitmqQueue"
                 ),
             ],
             capture_output=True,
