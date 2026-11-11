@@ -1,4 +1,19 @@
+import pytest
+
 from jwf_common_python.translate import SentenceInfo, WordInfo
+from jwf_common_python.translate.microsoft import TranslateMicrosoft
+
+
+@pytest.fixture
+def offline_microsoft() -> TranslateMicrosoft:
+    """格式转换测试使用占位配置，构造客户端时不发请求。"""
+    return TranslateMicrosoft(
+        text_endpoint="https://example.invalid/text",
+        word_endpoint="https://example.invalid/word",
+        word_sample_endpoint="https://example.invalid/examples",
+        location_region="test-region", key="test-key",
+        tts_microsoft_config={"key": "test-key", "location_region": "test-region"},
+    )
 
 
 class TestMicrosoft:
@@ -9,6 +24,7 @@ class TestMicrosoft:
     target_language_code = "zh-CN"
 
     # pytest tests/test_translate/microsoft_test.py::TestMicrosoft::test_translate_word
+    @pytest.mark.manual
     def test_translate_word(self, translate_microsoft_obj):
         res_tran: dict = translate_microsoft_obj.translate_word(
             word=self.word,
@@ -29,6 +45,7 @@ class TestMicrosoft:
         translations = res_tran["translations"]
         assert isinstance(translations, list)
 
+    @pytest.mark.manual
     def test_translate_sentence(self, translate_microsoft_obj):
         res_tran: dict = translate_microsoft_obj.translate_sentence(
             text=self.text,
@@ -51,8 +68,8 @@ class TestMicrosoft:
         assert sentence == self.text
 
     # ########################### [类方法]格式化响应结果 ############################
-    def test_format_word_response(self, translate_microsoft_obj, word_translate_data):
-        res: WordInfo = translate_microsoft_obj.format_word_response(
+    def test_format_word_response(self, offline_microsoft, word_translate_data):
+        res: WordInfo = offline_microsoft.format_word_response(
             word_translate_data
         )
         assert isinstance(res, dict)
@@ -83,9 +100,9 @@ class TestMicrosoft:
         assert isinstance(extended_info, dict)
 
     def test_format_sentence_response(
-        self, translate_microsoft_obj, sentence_translate_data
+        self, offline_microsoft, sentence_translate_data
     ):
-        res: SentenceInfo = translate_microsoft_obj.format_sentence_response(
+        res: SentenceInfo = offline_microsoft.format_sentence_response(
             sentence_translate_data
         )
         assert isinstance(res, dict)
@@ -98,6 +115,7 @@ class TestMicrosoft:
         assert isinstance(audio_data, bytes)
 
     # ############################ [私有方法] 发送word请求  ############################
+    @pytest.mark.manual
     def test__send_word_request(self, translate_microsoft_obj):
         res: dict = translate_microsoft_obj._send_word_request(
             self.word, self.source_language_code, self.target_language_code
@@ -118,6 +136,7 @@ class TestMicrosoft:
         assert "prefixWord" in translation
         assert "backTranslations" in translation
 
+    @pytest.mark.manual
     def test__send_word_examples_request(self, translate_microsoft_obj):
         res: list[dict] = translate_microsoft_obj._send_word_examples_request(
             normalized_word=self.word,
@@ -136,9 +155,9 @@ class TestMicrosoft:
         assert "targetSuffix" in example
 
     def test__unique_word_examples(
-        self, translate_microsoft_obj, microsoft_word_example_data
+        self, offline_microsoft, microsoft_word_example_data
     ):
-        unique_examples: list[dict] = translate_microsoft_obj._unique_word_examples(
+        unique_examples: list[dict] = offline_microsoft._unique_word_examples(
             microsoft_word_example_data
         )
         # print(
@@ -162,6 +181,7 @@ class TestMicrosoft:
         assert "targetTerm" in first_example_first_tran
         assert "targetSuffix" in first_example_first_tran
 
+    @pytest.mark.manual
     def test__get_word_translation_all_examples(
         self, translate_microsoft_obj, microsoft_word_raw_response
     ):
@@ -187,6 +207,7 @@ class TestMicrosoft:
         assert isinstance(first_res["examples"], list)
 
     # ############################ [私有方法] 发送sentence请求  ############################
+    @pytest.mark.manual
     def test__send_sentence_request(self, translate_microsoft_obj):
         res = translate_microsoft_obj._send_sentence_request(
             self.text,
@@ -199,48 +220,49 @@ class TestMicrosoft:
         assert "to" in res
         # print(res, type(res))
 
+    @pytest.mark.manual
     def test__send_tts_request(self, translate_microsoft_obj):
         wav_data = translate_microsoft_obj._send_tts_request(self.text, None)
         assert isinstance(wav_data, bytes)
         assert len(wav_data) > 100
 
     # ############################ 静态方法测试 ############################
-    def test__change_language_code(self, translate_microsoft_obj):
-        assert translate_microsoft_obj._change_language_code("zh-CN") == "zh-Hans"
-        assert translate_microsoft_obj._change_language_code("en") == "en"
+    def test__change_language_code(self, offline_microsoft):
+        assert offline_microsoft._change_language_code("zh-CN") == "zh-Hans"
+        assert offline_microsoft._change_language_code("en") == "en"
 
-    def test__change_pos_tag(self, translate_microsoft_obj):
-        assert translate_microsoft_obj._change_pos_tag("ADJ") == (
+    def test__change_pos_tag(self, offline_microsoft):
+        assert offline_microsoft._change_pos_tag("ADJ") == (
             "Adjectives",
             "形容词",
         )
-        assert translate_microsoft_obj._change_pos_tag("ADV") == ("Adverbs", "副词")
-        assert translate_microsoft_obj._change_pos_tag("CONJ") == (
+        assert offline_microsoft._change_pos_tag("ADV") == ("Adverbs", "副词")
+        assert offline_microsoft._change_pos_tag("CONJ") == (
             "Conjunctions",
             "连词",
         )
-        assert translate_microsoft_obj._change_pos_tag("DET") == (
+        assert offline_microsoft._change_pos_tag("DET") == (
             "Determiners",
             "限定词",
         )
-        assert translate_microsoft_obj._change_pos_tag("MODAL") == ("Verbs", "动词")
-        assert translate_microsoft_obj._change_pos_tag("NOUN") == ("Nouns", "名词")
-        assert translate_microsoft_obj._change_pos_tag("PREP") == (
+        assert offline_microsoft._change_pos_tag("MODAL") == ("Verbs", "动词")
+        assert offline_microsoft._change_pos_tag("NOUN") == ("Nouns", "名词")
+        assert offline_microsoft._change_pos_tag("PREP") == (
             "Prepositions",
             "介词",
         )
-        assert translate_microsoft_obj._change_pos_tag("PRON") == ("Pronouns", "代词")
-        assert translate_microsoft_obj._change_pos_tag("VERB") == ("Verbs", "动词")
-        assert translate_microsoft_obj._change_pos_tag("OTHER") == ("Other", "其他")
+        assert offline_microsoft._change_pos_tag("PRON") == ("Pronouns", "代词")
+        assert offline_microsoft._change_pos_tag("VERB") == ("Verbs", "动词")
+        assert offline_microsoft._change_pos_tag("OTHER") == ("Other", "其他")
 
-    def test__change_frequency(self, translate_microsoft_obj):
-        assert translate_microsoft_obj._change_frequency(0.123) == 12.3
-        assert translate_microsoft_obj._change_frequency(0.1) == 10.0
+    def test__change_frequency(self, offline_microsoft):
+        assert offline_microsoft._change_frequency(0.123) == 12.3
+        assert offline_microsoft._change_frequency(0.1) == 10.0
 
     def test__sort_shapes(
-        self, translate_microsoft_obj, microsoft_all_raw_backTranslations
+        self, offline_microsoft, microsoft_all_raw_backTranslations
     ):
-        res: list[dict] = translate_microsoft_obj._sort_shapes(
+        res: list[dict] = offline_microsoft._sort_shapes(
             microsoft_all_raw_backTranslations
         )
         assert isinstance(res, list)

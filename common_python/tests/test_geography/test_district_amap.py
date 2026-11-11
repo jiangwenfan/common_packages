@@ -1,5 +1,9 @@
 import time
 
+import pytest
+
+pytestmark = pytest.mark.manual
+
 
 class TestChinaDistrictAmap:
     def test_get_privince(self, china_district_amap):

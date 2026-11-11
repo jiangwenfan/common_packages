@@ -6,6 +6,8 @@
 pip install jwf-common-python
 ```
 
+仓库内开发和运行测试，请先按[开发协作](#开发协作)同步并激活本地环境。
+
 **从旧包迁移**
 
 从 `1.0.0` 起，安装名改为 `jwf-common-python`，导入名改为 `jwf_common_python`。
@@ -205,7 +207,7 @@ TMT 不提供词典和音频数据，标准化结果中的词性 Other、频率 
 离线测试（无需真实密钥、不调用腾讯云服务）：
 
 ```bash
-python -m unittest discover -s tests/test_tencent_translate -v
+pytest tests/test_tencent_translate
 ```
 
 ## 4. tts接口
@@ -230,18 +232,17 @@ audio: bytes = tts.convert_text_to_speech("你好")
 然后在仓库根目录运行：
 
 ```bash
-python -m pip install pytest requests python-dotenv
-python -m pytest --noconftest tests/test_tts/test_azure_manual.py -m manual -s
+pytest tests/test_tts/test_azure_manual.py -m manual -s
 ```
 
 测试会真实获取令牌并合成一次，保存 `test_temp_data/azure_tts.wav`，
 可直接打开试听；重复运行覆盖该测试音频。普通 pytest 默认跳过真实调用。
-`--noconftest` 可跳过其他服务的公共 fixture，无需安装 Docker 或数据库依赖。
+开发环境已包含测试依赖；该测试无需启动数据库或 Docker 服务。
 
 离线测试（mock HTTP）：
 
 ```bash
-python -m pytest --noconftest tests/test_tts/microsoft_test.py tests/test_tts/test_azure_local_config.py
+pytest tests/test_tts/microsoft_test.py tests/test_tts/test_azure_local_config.py
 ```
 
 ### [x] 统一音色目录
@@ -261,7 +262,7 @@ voices = TTSVoiceCatalog.get_voices()
 离线单元测试：
 
 ```bash
-python -m pytest --noconftest tests/test_tts/test_voice_catalog.py
+pytest tests/test_tts/test_voice_catalog.py
 ```
 
 ### [x] 腾讯云 TextToVoice 语音合成
@@ -302,23 +303,28 @@ with TTSTencent(secret_id="your-secret-id", secret_key="your-secret-key") as tts
 离线单元测试（mock HTTP，不需要真实密钥）：
 
 ```bash
-python -m pytest tests/test_tts/test_tencent_tts.py tests/test_tts/test_tencent_params.py
+pytest tests/test_tts/test_tencent_tts.py tests/test_tts/test_tencent_params.py
 ```
 
-本地真实测试：安装测试依赖，将根目录 `.env.example` 复制为 `.env`，
+`test_tencent_tts.py` 和 `test_tencent_params.py` 使用 mock，不调用真实腾讯云。
+
+本地真实测试：先按[开发协作](#开发协作)同步 uv 环境，将根目录 `.env.example` 复制为 `.env`，
 填写 `TENCENTCLOUD_SECRET_ID`、`TENCENTCLOUD_SECRET_KEY` 和必填音色
 `TENCENT_TTS_VOICE_TYPE`，可修改 `TENCENT_TTS_TEXT` 指定测试文本。
 `.env` 已被 Git 忽略。然后在仓库根目录执行：
 
 ```bash
-python -m pip install pytest python-dotenv 'tencentcloud-sdk-python-common>=3.0.1042,<4'
-python -m pytest --noconftest tests/test_tts/test_tencent_manual.py -m manual -s
+source .venv/bin/activate
+pytest tests/test_tts/test_tencent_manual.py -m manual -s
 ```
+
+真实服务测试入口是 `test_tencent_manual.py`，`-m manual` 显式启用真实调用，
+`-s` 在终端显示生成文件的路径。开发环境已包含依赖，无需添加 `--noconftest`。
 
 这会真实调用一次腾讯云，保存 `test_temp_data/tencent_tts.wav` 和
 `test_temp_data/tencent_tts_response.json`，重复运行会覆盖这两个测试文件。
 可直接打开 WAV 试听，JSON 中保留音频、字幕和请求 ID。
-`--noconftest` 跳过其他服务的公共 fixture，无需安装 MySQL、Docker 等依赖。
+开发环境已包含测试依赖；该测试无需启动 MySQL、Docker 等服务。
 普通 pytest 默认排除 `manual`；只有显式指定 `-m manual` 才运行该测试。
 
 ## 5. Ai接口
@@ -486,7 +492,7 @@ chapter_words = get_chapter_words(
 离线测试：
 
 ```bash
-python -m unittest discover -s tests/test_language_utils -v
+pytest tests/test_language_utils
 ```
 
 ## 有道单词本
@@ -544,7 +550,7 @@ with EudicClient(token="NIS your-token", language="en", timeout=30) as client:
 离线测试（无需 Token、不连接欧路服务）：
 
 ```bash
-python -m unittest discover -s tests/test_eudic -v
+pytest tests/test_eudic
 ```
 
 ## 消息队列
@@ -593,7 +599,7 @@ with RabbitmqQueue(
 离线测试（需安装两个后端依赖，不需要启动服务器）：
 
 ```bash
-python -m unittest discover -s tests/test_message_queue -v
+pytest tests/test_message_queue
 ```
 
 ## ClickHouse 和 Elasticsearch
@@ -648,7 +654,7 @@ with ElasticsearchHandle(
 离线测试（安装上述依赖即可，无需启动服务）：
 
 ```bash
-python -m unittest discover -s tests/test_db_utils -v
+pytest tests/test_db_utils
 ```
 
 ## 视频合并
@@ -694,7 +700,7 @@ metadata = probe_video(output)  # 完整 ffprobe JSON，含 streams 和 format
 测试（安装 FFmpeg 后会生成短视频，验证音轨、时长、帧顺序和失败清理）：
 
 ```bash
-python -m unittest discover -s tests/test_video -v
+pytest tests/test_video
 ```
 
 ## GitHub Webhook
@@ -731,16 +737,46 @@ app = create_webhook_app(secret, path="/hook")
 离线测试（HTTP 部分使用 Flask 本地测试客户端）：
 
 ```bash
-python -m unittest discover -s tests/test_github -v
+pytest tests/test_github
 ```
 
 ## 开发协作
-打包
+
+本地依赖管理使用 [uv](https://docs.astral.sh/uv/)，需要 Python 3.11 或更高版本。
+安装 uv 后，在仓库根目录同步并激活环境；命令自动创建 `.venv`，
+安装项目各模块开发和测试需要的 SDK、数据库客户端等依赖：
+
 ```bash
-python -m build
+uv sync --locked
+source .venv/bin/activate
 ```
-单元测试:
+
+`pyproject.toml` 声明依赖范围，`uv.lock` 锁定解析结果，两者均纳入版本控制。
+开发依赖统一声明在 `dev` 组，`uv sync` 默认安装，包含 YouTube 字幕客户端。
+每次打开新终端后执行 `source .venv/bin/activate`，即可直接使用 `python`、`pytest`。
+
+添加依赖与更新锁文件：
+
+```bash
+uv add package-name
+uv add --dev package-name
+uv lock --upgrade
+```
+
+单元测试（默认排除 `manual`）：
+
 ```bash
 pytest
 pytest path/to/test_file.py::TestClassName::test_method_name
+```
+
+普通测试使用 mock 或临时文件，不需要真实密钥或运行中的数据库。
+真实外部服务测试必须显式指定 `-m manual`；TTS 按供应商章节配置根目录 `.env`，
+历史集成测试依赖 `tests/secret.toml`（格式参考 `tests/secret.toml.sample`），
+其中 MySQL 集成测试还需要本地 Docker 服务。
+
+构建源码包与 wheel：
+
+```bash
+uv build
 ```

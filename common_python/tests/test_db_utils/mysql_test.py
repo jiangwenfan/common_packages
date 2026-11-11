@@ -3,6 +3,8 @@ import logging
 import pandas as pd
 import pytest
 
+pytestmark = pytest.mark.manual
+
 logging.basicConfig(level=logging.INFO)
 
 

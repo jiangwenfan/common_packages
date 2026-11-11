@@ -1,5 +1,7 @@
 import pytest
 
+pytestmark = pytest.mark.manual
+
 
 class TestOauth2Google:
     # code1,code2,code3 必须是通过 get_web_auth_url() 认证之后，且没有被使用过的code

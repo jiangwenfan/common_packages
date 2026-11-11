@@ -1,3 +1,8 @@
+import pytest
+
+pytestmark = pytest.mark.manual
+
+
 class TestSearchLocationAmap:
     def test_search(self, search_location_amap):
         keyword = "海底捞"

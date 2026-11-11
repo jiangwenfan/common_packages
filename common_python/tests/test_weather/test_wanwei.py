@@ -1,3 +1,8 @@
+import pytest
+
+pytestmark = pytest.mark.manual
+
+
 class TestWeatherWanwei:
     def test_get_weather(self, weather_wanwei):
         city_name = "新安县"

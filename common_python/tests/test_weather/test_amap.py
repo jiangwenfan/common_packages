@@ -1,3 +1,8 @@
+import pytest
+
+pytestmark = pytest.mark.manual
+
+
 class TestWeatherAmap:
     def test_get_current_weather(self, weather_amap):
         res = weather_amap.get_current_weather("新安县", "410323")

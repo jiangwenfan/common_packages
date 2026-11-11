@@ -1,3 +1,8 @@
+import pytest
+
+pytestmark = pytest.mark.manual
+
+
 class TestTencentCosStorage:
     def test_save_image(self, tencent_cos_obj, tencent_cos_config):
         # 要保存的文件名和内容

@@ -1,3 +1,8 @@
+import pytest
+
+pytestmark = pytest.mark.manual
+
+
 class TestLLMBaiduErnie:
     def test_get_token_info(self, llm_baidu_ernie_obj):
         res = llm_baidu_ernie_obj.get_token_info()
